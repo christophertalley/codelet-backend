@@ -40,5 +40,5 @@
 
 - Quizzes (Stretch)
 - Image upload for flashcards
-- Drag n Drop ordering of flask cards in set (linked list?)
+- Drag n Drop ordering of flash cards in set (linked list?)
 - "Courses" 
