@@ -4,7 +4,9 @@ from functools import wraps
 
 from flask import Flask, request, jsonify, _request_ctx_stack
 from flask_cors import cross_origin
+from flask_migrate import Migrate
 from jose import jwt
+from .models import db
 
 from .config import Configuration
 
@@ -14,6 +16,8 @@ ALGORITHMS = ["RS256"]
 
 app = Flask(__name__)
 app.config.from_object(Configuration)
+db.init_app(app)
+Migrate(app, db)
 
 # Error handler
 

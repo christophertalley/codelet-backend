@@ -3,3 +3,8 @@ python-dotenv
 python-jose
 flask-cors
 six
+flask-sqlalchemy
+psycopg2-binary
+alembic
+flask-migrate
+sqlalchemy

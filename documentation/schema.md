@@ -7,8 +7,6 @@
 | id             |  integer   | not null, primary key |
 | email          |   string   |      not null, unique |
 | username       | string(50) |      not null, unique |
-| createdAt      | timestamp  |              not null |
-| updatedAt      | timestamp  |              not null |
 
 -Associations: User has many sets (one-to-many)
 
@@ -18,35 +16,31 @@
 | -------------- | :--------: | --------------------: |
 | id             |  integer   | not null, primary key |
 | name           | string(50) |      not null, unique |
-| createdAt      | timestamp  |              not null |
-| updatedAt      | timestamp  |              not null |
 
 -Associations: Category belongs to many sets (one-to-many)
 
-## **Flashcard Set**
+## **Set**
 
 | attribute name | data type  |               details |
 | -------------- | :--------: | --------------------: |
 | id             |  integer   | not null, primary key |
 | categoryId     | string(50) | not null, foreign key |
 | title          |   string   |              not null |
-| description    |    text    |              not null |
+| description    |    text    |                       |
 | createdAt      | timestamp  |              not null |
-| updatedAt      | timestamp  |              not null |
 
--Associations: Set has many flashcards (one-to-many) & set has one category (one-to-many)
+-Associations: Set has many cards (one-to-many) & set has one category (one-to-many)
 
-## **Flashcard**
+## **Card**
 
-| attribute name | data type  |               details |
-| -------------- | :--------: | --------------------: |
-| id             |  integer   | not null, primary key |
-| term           | string(50) |              not null |
-| definition     |    text    |              not null |
-| createdAt      | timestamp  |              not null |
-| updatedAt      | timestamp  |              not null |
+| attribute name |  data type  |               details |
+| -------------- | :---------: | --------------------: |
+| id             |   integer   | not null, primary key |
+| term           | string(100) |              not null |
+| definition     |    text     |              not null |
+| setId          |   integer   | foreign key, not null |
 
--Associations: Flashcard belongs to one set (one-to-many)
+-Associations: Card belongs to one set (one-to-many)
 
 ## **Favorite**
 
@@ -55,8 +49,6 @@
 | id             |  integer  | not null, primary key |
 | setId          |  integer  | not null, foreign key |
 | userId         |  integer  | not null, foreign key |
-| createdAt      | timestamp |              not null |
-| updatedAt      | timestamp |              not null |
 
 ## **Vote**
 
@@ -66,5 +58,3 @@
 | setId          |  integer  | not null, foreign key |
 | userId         |  integer  | not null, foreign key |
 | isUpvote       |  boolean  |                       |
-| createdAt      | timestamp |              not null |
-| updatedAt      | timestamp |              not null |
