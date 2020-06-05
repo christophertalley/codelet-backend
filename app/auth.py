@@ -1,28 +1,14 @@
 import json
 from six.moves.urllib.request import urlopen
 from functools import wraps
-
 from flask import Flask, request, jsonify, _request_ctx_stack
 from flask_cors import cross_origin
 from flask_migrate import Migrate
 from jose import jwt
-from .models import db
-from .routes import users
-
-from .config import Configuration
 
 AUTH0_DOMAIN = 'codelet-app.auth0.com'
 API_AUDIENCE = 'codelet_api'
 ALGORITHMS = ["RS256"]
-
-app = Flask(__name__)
-
-
-app.register_blueprint(users.bp)
-db.init_app(app)
-Migrate(app, db)
-
-# Error handler
 
 
 class AuthError(Exception):
@@ -30,12 +16,6 @@ class AuthError(Exception):
         self.error = error
         self.status_code = status_code
 
-
-@app.errorhandler(AuthError)
-def handle_auth_error(ex):
-    response = jsonify(ex.error)
-    response.status_code = ex.status_code
-    return response
 
 
 def get_token_auth_header():
@@ -55,7 +35,7 @@ def get_token_auth_header():
         raise AuthError({"code": "invalid_header",
                          "description":
                          "Authorization header must start with"
-                         " Bearer"}, 401)
+                         " Bearer"}, 401).handle_auth_error
     elif len(parts) == 1:
         raise AuthError({"code": "invalid_header",
                          "description": "Token not found"}, 401)
@@ -116,39 +96,3 @@ def requires_auth(f):
         raise AuthError({"code": "invalid_header",
                          "description": "Unable to find appropriate key"}, 401)
     return decorated
-
-
-app.config.from_object(Configuration)
-# This doesn't need authentication
-
-
-@app.route("/api/public")
-@cross_origin(headers=["Content-Type", "Authorization"])
-def public():
-    response = "Hello from a public endpoint! You don't need to be authenticated to see this."
-    return jsonify(message=response)
-
-# This needs authentication
-
-
-@app.route("/api/private")
-@cross_origin(headers=["Content-Type", "Authorization"])
-@requires_auth
-def private():
-    response = "Hello from a private endpoint! You need to be authenticated to see this."
-    return jsonify(message=response)
-
-# This needs authorization
-
-
-@app.route("/api/private-scoped")
-@cross_origin(headers=["Content-Type", "Authorization"])
-@requires_auth
-def private_scoped():
-    if requires_scope("read:messages"):
-        response = "Hello from a private endpoint! You need to be authenticated and have a scope of read:messages to see this."
-        return jsonify(message=response)
-    raise AuthError({
-        "code": "Unauthorized",
-        "description": "You don't have access to this resource"
-    }, 403)
