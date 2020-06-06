@@ -23,6 +23,12 @@ class Category(db.Model):
 
     sets = db.relationship('Set', back_populates='category')
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name
+        }
+
 
 class Set(db.Model):
     __tablename__ = 'sets'
@@ -41,6 +47,16 @@ class Set(db.Model):
     favorites = db.relationship('Favorite', back_populates='set')
     votes = db.relationship('Vote', back_populates='set')
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'title': self.title,
+            'description': self.description,
+            'category_id': self.category_id,
+            'user_id': self.user_id,
+            'created_at': self.created_at
+        }
+
 
 class Card(db.Model):
     __tablename__ = 'cards'
@@ -51,6 +67,14 @@ class Card(db.Model):
     set_id = db.Column(db.Integer, db.ForeignKey('sets.id'), nullable=False)
 
     set = db.relationship('Set', back_populates='cards')
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'term': self.term,
+            'definition': self.definition,
+            'set_id': self.set_id
+        }
 
 
 class Favorite(db.Model):
@@ -63,6 +87,13 @@ class Favorite(db.Model):
     user = db.relationship('User', back_populates='favorites')
     set = db.relationship('Set', back_populates='favorites')
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'set_id': self.set_id,
+            'user_id': self.user_id,
+        }
+
 
 class Vote(db.Model):
     __tablename__ = 'votes'
@@ -74,3 +105,11 @@ class Vote(db.Model):
 
     user = db.relationship('User', back_populates='votes')
     set = db.relationship('Set', back_populates='votes')
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'set_id': self.set_id,
+            'user_id': self.user_id,
+            'is_upvote': self.is_upvote
+        }
