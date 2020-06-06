@@ -21,13 +21,14 @@
 
 ## **Set**
 
-| attribute name | data type  |               details |
-| -------------- | :--------: | --------------------: |
-| id             |  integer   | not null, primary key |
-| categoryId     | string(50) | not null, foreign key |
-| title          |   string   |              not null |
-| description    |    text    |                       |
-| createdAt      | timestamp  |              not null |
+| attribute name | data type |               details |
+| -------------- | :-------: | --------------------: |
+| id             |  integer  | not null, primary key |
+| category_id    |  integer  | not null, foreign key |
+| user_id        |  integer  | not null, foreign key |
+| title          |  string   |              not null |
+| description    |   text    |                       |
+| createdAt      | timestamp |              not null |
 
 -Associations: Set has many cards (one-to-many) & set has one category (one-to-many)
 
