@@ -31,13 +31,12 @@ def privateUser():
 def updateUser():
     if request.method == 'POST':
         body = request.json
-        # return body['email']
         # checks if there there is user in db
         db_user = User.query.filter_by(email=body['email']).first()
-        if db_user:
+        if db_user:  # if user exists updates the user's name
             db_user.nickname = body['nickname']
             return jsonify({'userId': db_user.id}), 201
-        else:  # no user exists so we create a new user
+        else:  # no user exists create a new user
             new_user = User(email=body['email'],
                             nickname=body['nickname']
                             )

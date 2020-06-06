@@ -3,7 +3,7 @@ from six.moves.urllib.request import urlopen
 from functools import wraps
 
 from flask import Flask, request, jsonify, _request_ctx_stack
-from flask_cors import cross_origin
+from flask_cors import cross_origin, CORS
 from flask_migrate import Migrate
 from jose import jwt
 from .models import db
@@ -14,6 +14,7 @@ from .config import Configuration
 
 app = Flask(__name__)
 app.config.from_object(Configuration)
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 app.register_blueprint(users.bp)
 db.init_app(app)
