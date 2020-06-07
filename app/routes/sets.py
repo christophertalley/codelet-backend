@@ -1,7 +1,7 @@
 from flask import Blueprint
 from flask_cors import cross_origin
 from ..auth import *
-from app.models import db, User, Set
+from app.models import db, User, Set, Card
 
 bp = Blueprint('sets', __name__, url_prefix='/sets')
 
@@ -27,6 +27,14 @@ def sets():
 def set(set_id):  # returns set info @set_id
     set = Set.query.get(set_id)
     return set.to_dict(), 200
+
+
+# Route to return all cards in a set
+@bp.route('/<int:set_id>/cards')
+@cross_origin(headers=["Content-Type", "Authorization"])
+def set_cards(set_id):  # returns set info @set_id
+    cards = Card.query.filter_by(set_id=set_id).all()
+    return jsonify([card.to_dict() for card in cards])
 
 
 # Create new set
