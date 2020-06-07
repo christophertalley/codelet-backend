@@ -29,7 +29,6 @@ def privateUser():
 @cross_origin(headers=["Content-Type", "Authorization"])
 @requires_auth
 def updateUser():
-
     body = request.json
     # checks if there there is user in db
     db_user = User.query.filter_by(email=body['email']).first()
