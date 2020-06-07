@@ -7,7 +7,7 @@ from flask_cors import cross_origin, CORS
 from flask_migrate import Migrate
 from jose import jwt
 from .models import db
-from .routes import users, cards, sets
+from .routes import users, cards, sets, categories
 from .auth import *
 
 from .config import Configuration
@@ -19,6 +19,7 @@ cors = CORS(app, resources={r"/*": {"origins": "*"}})
 app.register_blueprint(users.bp)
 app.register_blueprint(cards.bp)
 app.register_blueprint(sets.bp)
+app.register_blueprint(categories.bp)
 db.init_app(app)
 Migrate(app, db)
 
@@ -45,6 +46,8 @@ def public():
 @cross_origin(headers=["Content-Type", "Authorization"])
 @requires_auth
 def private():
+    token = request.headers.get('Authorization')
+    print(token)
     response = "Hello from a private endpoint! You need to be authenticated to see this."
     return jsonify(message=response)
 

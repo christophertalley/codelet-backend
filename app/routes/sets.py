@@ -1,7 +1,9 @@
-from flask import Blueprint
+from flask import Blueprint, request
 from flask_cors import cross_origin
 from ..auth import *
 from app.models import db, User, Set, Card
+import requests
+import json
 
 bp = Blueprint('sets', __name__, url_prefix='/sets')
 
@@ -9,7 +11,7 @@ bp = Blueprint('sets', __name__, url_prefix='/sets')
 # Error handler
 @bp.errorhandler(AuthError)
 def handle_auth_error(ex):
-    response = jsonify(ex.error)
+    response = jsonify(ex.erreor)
     response.status_code = ex.status_code
     return response
 
@@ -43,10 +45,15 @@ def set_cards(set_id):  # returns set info @set_id
 @requires_auth
 def create_set():
     data = request.json
+    token = request.headers.get('Authorization')
+    req = requests.get('https://codelet-app.auth0.com/userinfo',
+                       headers={'Authorization': token}).content
+    userInfo = json.loads(req)
+    userId = User.query.filter_by(email=userInfo['email']).first().id
     set = Set(title=data['title'],
               description=data['description'],
               category_id=data['category_id'],
-              user_id=data['user_id'],
+              user_id=userId,
               created_at=data['created_at']
               )
     db.session.add(set)
