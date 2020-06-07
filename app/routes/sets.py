@@ -45,6 +45,8 @@ def set_cards(set_id):  # returns set info @set_id
 @requires_auth
 def create_set():
     data = request.json
+
+    # gets decodes userinfo out of token using auth0 api
     token = request.headers.get('Authorization')
     req = requests.get('https://codelet-app.auth0.com/userinfo',
                        headers={'Authorization': token}).content
