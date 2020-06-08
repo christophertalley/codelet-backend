@@ -54,7 +54,10 @@ class Set(db.Model):
             'description': self.description,
             'category_id': self.category_id,
             'user_id': self.user_id,
-            'created_at': self.created_at
+            'created_at': self.created_at,
+            'nickname': self.user.nickname,  # returns nickname from user model
+            # returns number of cards in set from relationship
+            'card_count': len(self.cards)
         }
 
 

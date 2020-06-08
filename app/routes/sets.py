@@ -56,7 +56,7 @@ def create_set():
               description=data['description'],
               category_id=data['category_id'],
               user_id=userId,
-              created_at=data['created_at']
+              created_at=data['created_at'],
               )
     db.session.add(set)
     db.session.commit()

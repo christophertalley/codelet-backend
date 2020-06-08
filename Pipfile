@@ -17,6 +17,7 @@ alembic = "*"
 flask-migrate = "*"
 psycopg2-binary = "*"
 requests = "*"
+sqlathanor = "*"
 
 [requires]
 python_version = "3.8"
