@@ -7,7 +7,7 @@ from flask_cors import cross_origin, CORS
 from flask_migrate import Migrate
 from jose import jwt
 from .models import db
-from .routes import users, cards, sets, categories, votes
+from .routes import users, cards, sets, categories, votes, favorites
 from .auth import *
 
 from .config import Configuration
@@ -21,6 +21,7 @@ app.register_blueprint(cards.bp)
 app.register_blueprint(sets.bp)
 app.register_blueprint(categories.bp)
 app.register_blueprint(votes.bp)
+app.register_blueprint(favorites.bp)
 db.init_app(app)
 Migrate(app, db)
 
