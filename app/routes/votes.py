@@ -16,7 +16,7 @@ def handle_auth_error(ex):
     return response
 
 
-# Adds a vote to a set body sends a true or false
+# Updates votes
 @bp.route('/<int:set_id>/votes', methods=['POST'])
 @cross_origin(headers=["Content-Type", "Authorization"])
 @requires_auth
