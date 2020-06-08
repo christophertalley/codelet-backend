@@ -59,7 +59,9 @@ class Set(db.Model):
             # returns number of cards in set from relationship
             'card_count': len(self.cards),
             # returns votes info list from votes relationship
-            'votes': [vote.to_dict() for vote in self.votes]
+            'votes': [vote.to_dict() for vote in self.votes],
+            # returns favorites info list
+            'favorites': [favorite.to_dict() for favorite in self.favorites]
         }
 
 

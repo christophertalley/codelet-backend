@@ -17,7 +17,7 @@ def handle_auth_error(ex):
 
 
 # Updates votes
-@bp.route('/<int:set_id>/votes', methods=['POST'])
+@bp.route('/<int:set_id>/votes', methods=['PATCH'])
 @cross_origin(headers=["Content-Type", "Authorization"])
 @requires_auth
 def create_vote(set_id):
