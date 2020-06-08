@@ -55,9 +55,11 @@ class Set(db.Model):
             'category_id': self.category_id,
             'user_id': self.user_id,
             'created_at': self.created_at,
-            'nickname': self.user.nickname,  # returns nickname from user model
+            'author': self.user.nickname,  # returns nickname from user model
             # returns number of cards in set from relationship
-            'card_count': len(self.cards)
+            'card_count': len(self.cards),
+            # returns votes info list from votes relationship
+            'votes': [vote.to_dict() for vote in self.votes]
         }
 
 
