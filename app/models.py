@@ -2,6 +2,10 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
+favorites_table = db.Table('favorites', db.Model.metadata,
+    db.Column("set_id", db.Integer, db.ForeignKey('sets.id'), nullable=False),  # noqa
+    db.Column("user_id", db.Integer, db.ForeignKey('users.id'), nullable=False))  # noqa
+
 
 class User(db.Model):
     __tablename__ = 'users'
@@ -11,7 +15,8 @@ class User(db.Model):
     nickname = db.Column(db.String(50), nullable=False)
 
     sets = db.relationship('Set', back_populates='user')
-    favorites = db.relationship('Favorite', back_populates='user')
+    favorites = db.relationship(
+        'Set', secondary=favorites_table)
     votes = db.relationship('Vote', back_populates='user')
 
     def to_dict(self):
@@ -20,7 +25,7 @@ class User(db.Model):
             'email': self.email,
             'nickname': self.nickname,
             'userSets': [set.to_dict() for set in self.sets],
-            'favoriteSets': [favorite.set_id for favorite in self.favorites]
+            'favoriteSets': [favorite.to_dict() for favorite in self.favorites]
         }
 
 
@@ -53,7 +58,6 @@ class Set(db.Model):
     user = db.relationship('User', back_populates='sets')
     category = db.relationship('Category', back_populates='sets')
     cards = db.relationship('Card', back_populates='set')
-    favorites = db.relationship('Favorite', back_populates='set')
     votes = db.relationship('Vote', back_populates='set')
 
     def to_dict(self):
@@ -70,8 +74,6 @@ class Set(db.Model):
             # returns votes info list from votes relationship
             'votes': [vote.to_dict() for vote in self.votes],
             # returns favorites info list
-            'favorites': [favorite.to_dict() for favorite in self.favorites]
-
         }
 
 
@@ -91,30 +93,6 @@ class Card(db.Model):
             'term': self.term,
             'definition': self.definition,
             'set_id': self.set_id,
-        }
-
-
-class Favorite(db.Model):
-    __tablename__ = 'favorites'
-
-    id = db.Column(db.Integer, primary_key=True)
-    set_id = db.Column(db.Integer, db.ForeignKey('sets.id'), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-
-    user = db.relationship('User', back_populates='favorites')
-    set = db.relationship('Set', back_populates='favorites')
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'set_id': self.set_id,
-            'user_id': self.user_id,
-            # 'sets': self.set.to_dict_favorites()
-        }
-
-    def relations_to_dict(self):
-        return {
-            'sets': self.set.to_dict()
         }
 
 

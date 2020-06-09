@@ -12,6 +12,11 @@ from .auth import *
 
 from .config import Configuration
 
+import logging
+logging.basicConfig()
+logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
+
+
 app = Flask(__name__)
 app.config.from_object(Configuration)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
