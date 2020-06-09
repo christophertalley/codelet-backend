@@ -42,6 +42,7 @@ def updateUser():
                         )
         db.session.add(new_user)
         db.session.commit()
+
         return new_user, 201
 
 
@@ -56,9 +57,6 @@ def get_sets():
     userInfo = json.loads(req)
     userId = User.query.filter_by(email=userInfo['email']).first().id
 
-    userInfo = User.query.get(userId).to_dict()
-    userFavoriteSets = {'userFavSets': [Set.query.get(favoriteId).to_dict()
-                                        for favoriteId in userInfo['favoriteSets']]}
-    return {**userInfo, **userFavoriteSets}, 200
-    # userSets = Set.query.filter_by(user_id=userId).all()
-    # favoriteSets = Favorite.query.filter_by(user_i)
+    userInfo = User.query.options(db.joinedload(
+        'sets').joinedload('votes'), db.joinedload('favorites')).get(userId)
+    return userInfo.to_dict(), 200

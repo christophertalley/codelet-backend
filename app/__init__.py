@@ -12,6 +12,11 @@ from .auth import *
 
 from .config import Configuration
 
+import logging
+logging.basicConfig()
+logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
+
+
 app = Flask(__name__)
 app.config.from_object(Configuration)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
@@ -25,9 +30,8 @@ app.register_blueprint(favorites.bp)
 db.init_app(app)
 Migrate(app, db)
 
+
 # Error handler
-
-
 @app.errorhandler(AuthError)
 def handle_auth_error(ex):
     response = jsonify(ex.error)

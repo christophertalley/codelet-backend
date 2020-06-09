@@ -1,7 +1,7 @@
 from flask import Blueprint, request
 from flask_cors import cross_origin
 from ..auth import *
-from app.models import db, User, Set, Card, Vote, Favorite
+from app.models import db, User, Set, Card, Vote
 import requests
 import json
 
@@ -25,16 +25,15 @@ def create_favorite(set_id):
     req = requests.get('https://codelet-app.auth0.com/userinfo',
                        headers={'Authorization': token}).content
     userInfo = json.loads(req)
-    userId = User.query.filter_by(email=userInfo['email']).first().id
-    dbFavorite = Favorite.query.filter_by(
-        user_id=userId, set_id=set_id).first()
-
-    if dbFavorite:
-        db.session.delete(dbFavorite)
+    user = User.query.filter_by(email=userInfo['email']).first()
+    set = Set.query.get(set_id)
+    try:
+        user.favorites.remove(set)
+        db.session.add(user)
         db.session.commit()
         return "Deleted", 204
-    else:
-        new_favorite = Favorite(user_id=userId, set_id=set_id)
-        db.session.add(new_favorite)
+    except:  # noqa
+        user.favorites.append(set)
+        db.session.add(user)
         db.session.commit()
         return "Created favorite", 201
