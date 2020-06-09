@@ -59,9 +59,4 @@ def get_sets():
 
     userInfo = User.query.options(db.joinedload(
         'sets').joinedload('votes'), db.joinedload('favorites')).get(userId)
-    # userFavoriteSets = {'userFavSets': [Set.query.get(favoriteId).to_dict()
-    #                                     for favoriteId in userInfo['favoriteSets']]}
-    # userInfo.favorites[0].to_dict()
     return userInfo.to_dict(), 200
-    # userSets = Set.query.filter_by(user_id=userId).all()
-    # favoriteSets = Favorite.query.filter_by(user_i)

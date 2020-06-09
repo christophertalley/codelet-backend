@@ -30,9 +30,8 @@ app.register_blueprint(favorites.bp)
 db.init_app(app)
 Migrate(app, db)
 
+
 # Error handler
-
-
 @app.errorhandler(AuthError)
 def handle_auth_error(ex):
     response = jsonify(ex.error)

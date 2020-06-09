@@ -16,25 +16,24 @@ def handle_auth_error(ex):
     return response
 
 
-# @bp.route('/<int:set_id>/favorites', methods=['PATCH'])
-# @cross_origin(headers=["Content-Type", "Authorization"])
-# @requires_auth
-# def create_favorite(set_id):
-#     # gets decodes userinfo out of token using auth0 api
-#     token = request.headers.get('Authorization')
-#     req = requests.get('https://codelet-app.auth0.com/userinfo',
-#                        headers={'Authorization': token}).content
-#     userInfo = json.loads(req)
-#     userId = User.query.filter_by(email=userInfo['email']).first().id
-#     dbFavorite = Favorite.query.filter_by(
-#         user_id=userId, set_id=set_id).first()
-
-#     if dbFavorite:
-#         db.session.delete(dbFavorite)
-#         db.session.commit()
-#         return "Deleted", 204
-#     else:
-#         new_favorite = Favorite(user_id=userId, set_id=set_id)
-#         db.session.add(new_favorite)
-#         db.session.commit()
-#         return "Created favorite", 201
+@bp.route('/<int:set_id>/favorites', methods=['PATCH'])
+@cross_origin(headers=["Content-Type", "Authorization"])
+@requires_auth
+def create_favorite(set_id):
+    # gets decodes userinfo out of token using auth0 api
+    token = request.headers.get('Authorization')
+    req = requests.get('https://codelet-app.auth0.com/userinfo',
+                       headers={'Authorization': token}).content
+    userInfo = json.loads(req)
+    user = User.query.filter_by(email=userInfo['email']).first()
+    set = Set.query.get(set_id)
+    try:
+        user.favorites.remove(set)
+        db.session.add(user)
+        db.session.commit()
+        return "Deleted", 204
+    except:  # noqa
+        user.favorites.append(set)
+        db.session.add(user)
+        db.session.commit()
+        return "Created favorite", 201
