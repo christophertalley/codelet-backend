@@ -1,7 +1,7 @@
 from flask import Blueprint
 from flask_cors import cross_origin
 from ..auth import *
-from app.models import db, User
+from app.models import db, User, Set
 import requests
 
 bp = Blueprint("users", __name__, url_prefix='/users')
@@ -57,6 +57,8 @@ def get_sets():
     userId = User.query.filter_by(email=userInfo['email']).first().id
 
     userInfo = User.query.get(userId).to_dict()
-    return userInfo, 200
+    userFavoriteSets = {'userFavSets': [Set.query.get(favoriteId).to_dict()
+                                        for favoriteId in userInfo['favoriteSets']]}
+    return {**userInfo, **userFavoriteSets}, 200
     # userSets = Set.query.filter_by(user_id=userId).all()
     # favoriteSets = Favorite.query.filter_by(user_i)
