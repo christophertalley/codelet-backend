@@ -22,8 +22,9 @@ def sets():
     sets = Set.query.all()
     return jsonify([set.to_dict() for set in sets])
 
-
 # Return a single set by its id
+
+
 @bp.route('/<int:set_id>')
 @cross_origin(headers=["Content-Type", "Authorization"])
 def set(set_id):  # returns set info @set_id

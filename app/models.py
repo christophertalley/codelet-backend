@@ -15,13 +15,12 @@ class User(db.Model):
     votes = db.relationship('Vote', back_populates='user')
 
     def to_dict(self):
-        favSetsId = [favorite.set_id for favorite in self.favorites]
         return {
             'id': self.id,
             'email': self.email,
             'nickname': self.nickname,
             'userSets': [set.to_dict() for set in self.sets],
-            'favoriteSets': [favorite.to_dict() for favorite in self.favorites]
+            'favoriteSets': [favorite.set_id for favorite in self.favorites]
         }
 
 
@@ -72,21 +71,7 @@ class Set(db.Model):
             'votes': [vote.to_dict() for vote in self.votes],
             # returns favorites info list
             'favorites': [favorite.to_dict() for favorite in self.favorites]
-        }
 
-    def to_dict_favorites(self):
-        return {
-            'id': self.id,
-            'title': self.title,
-            'description': self.description,
-            'category_id': self.category_id,
-            'user_id': self.user_id,
-            'created_at': self.created_at,
-            'author': self.user.nickname,  # returns nickname from user model
-            # returns number of cards in set from relationship
-            'card_count': len(self.cards),
-            # returns votes info list from votes relationship
-            'votes': [vote.to_dict() for vote in self.votes]
         }
 
 
@@ -124,7 +109,12 @@ class Favorite(db.Model):
             'id': self.id,
             'set_id': self.set_id,
             'user_id': self.user_id,
-            'sets': self.set.to_dict_favorites()
+            # 'sets': self.set.to_dict_favorites()
+        }
+
+    def relations_to_dict(self):
+        return {
+            'sets': self.set.to_dict()
         }
 
 
