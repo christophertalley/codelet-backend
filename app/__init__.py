@@ -12,9 +12,10 @@ from .auth import *
 
 from .config import Configuration
 
-import logging
-logging.basicConfig()
-logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
+# sql logging
+# import logging
+# logging.basicConfig()
+# logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
 
 
 app = Flask(__name__)
