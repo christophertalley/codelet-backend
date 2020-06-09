@@ -124,124 +124,129 @@ def upgrade():
     # Add seeders for sets table
     op.bulk_insert(sets_table, [
         {
-            'title': 'Trees',
+            'title': 'Trees',  # 1 Chris
             'description': 'Study tree data structures!',
             'category_id': 1,
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'Graphs',
+            'title': 'Graphs',  # 2 Lizzie
             'description': 'Learn some graph data structures.',
             'category_id': 1,
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'Linked Lists',
+            'title': 'Linked Lists',  # 3 Lisa
             'description': 'Study linked lists data structures',
             'category_id': 1,
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'Concepts',
+            'title': 'Concepts',  # 4 Chris
             'description': 'Study some algorithm concepts.',
             'category_id': 2,
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'Sorting',
+            'title': 'Sorting',  # 5 Brandon
             'description': 'Learn about different sorting mechanisms.',
             'category_id': 2,
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'Datatypes',
+            'title': 'Datatypes',  # 6 Lizzie
             'description': 'Study various Javascript datatypes!',
             'category_id': 3,
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'Syntax',
+            'title': 'Syntax',  # 7 Brandon
             'description': 'Brush up on some Javascript syntax.',
             'category_id': 3,
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'Datatypes',
+            'title': 'Datatypes',  # 8 Chris
             'description': 'Need a refresher on python datatypes? Start here!',
             'category_id': 4,
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'Syntax',
+            'title': 'Syntax',  # 9 Lisa
             'description': 'No semi-colons here! Learn some python syntax!',
             'category_id': 4,
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'SQL',
+            'title': 'SQL',  # 10 Lisa
             'description': 'Review some SQL topics!',
             'category_id': 5,
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'Sequelize',
+            'title': 'Sequelize',  # 11 Lizzie
             'description': 'Learn about Sequelize!',
             'category_id': 5,
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'SQLAlchemy',
+            'title': 'SQLAlchemy',  # 12 Lisa
             'description': 'Learn about SQLAlchemy!',
             'category_id': 5,
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'React',
+            'title': 'React',  # 13 Lisa
             'description': 'A spicy new javascript framework',
             'category_id': '6',
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'Vanilla JS',
+            'title': 'Vanilla JS',  # 14 Brandon
             'description': 'Good ole\' unadulterated javascript. ',
             'category_id': '6',
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'HTML/CSS',
+            'title': 'HTML/CSS',  # 15 Lizzie
             'description': 'Learn about the backbones of the world wide web!',
             'category_id': '6',
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'Flask',
+            'title': 'Flask',  # 16 Brandon
             'description': 'Dive into Flask!',
             'category_id': '7',
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'Node',
+            'title': 'Node',  # 17 Chris
             'description': 'Learn about Node.js!',
             'category_id': '7',
             'user_id': 1,
             'created_at': datetime.now()
         },
+    ])
+
+    op.bulk_insert(cards_table, [
+        # {
+        #     'term':}
     ])
 # ### end Alembic commands ###
 

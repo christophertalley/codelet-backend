@@ -32,30 +32,32 @@
   - Needs to be part of a set
 
 4. Categories
-  - Data Structures
-    - Trees
-    - Graphs
-    - LinkedLists
-  - Algorithms
-    - Concepts
-    - Sorting
-  - Javascript
-    - Datatypes
-    - Syntax
-  - Python
-    - Datatypes
-    - Syntax
-  - Databases
-    - SQL
-    - Seqeulize
-    - SQLAlchemy
-  - Frontend
-    - HTML/CSS
-    - Vanilla JS
-    - React
-  - Backend
-    - Node
-    - Flask
+
+- Data Structures
+  - Trees
+  - Graphs
+  - LinkedLists
+- Algorithms
+  - Concepts
+  - Sorting
+- Javascript
+  - Datatypes
+  - Syntax
+- Python
+  - Datatypes
+  - Syntax
+- Databases
+  - SQL
+  - Sequelize
+  - SQLAlchemy
+- Frontend
+  - HTML/CSS
+  - Vanilla JS
+  - React
+- Backend
+
+  - Node
+  - Flask
 
 - Name
 - Filters sets

@@ -2,6 +2,7 @@ from flask import Blueprint
 from flask_cors import cross_origin
 from ..auth import *
 from app.models import db, User
+import requests
 
 bp = Blueprint("users", __name__, url_prefix='/users')
 
@@ -42,3 +43,20 @@ def updateUser():
         db.session.add(new_user)
         db.session.commit()
         return new_user, 201
+
+
+@bp.route('/sets')
+@cross_origin(headers=["Content-Type", "Authorization"])
+@requires_auth
+def get_sets():
+    # gets decodes userinfo out of token using auth0 api
+    token = request.headers.get('Authorization')
+    req = requests.get('https://codelet-app.auth0.com/userinfo',
+                       headers={'Authorization': token}).content
+    userInfo = json.loads(req)
+    userId = User.query.filter_by(email=userInfo['email']).first().id
+
+    userInfo = User.query.get(userId).to_dict()
+    return userInfo, 200
+    # userSets = Set.query.filter_by(user_id=userId).all()
+    # favoriteSets = Favorite.query.filter_by(user_i)
