@@ -28,6 +28,11 @@ class User(db.Model):
             'favoriteSets': [favorite.to_dict() for favorite in self.favorites]
         }
 
+    def to_dict_favorites(self):
+        return {
+            'id': self.id
+        }
+
 
 class Category(db.Model):
     __tablename__ = 'categories'
@@ -59,6 +64,7 @@ class Set(db.Model):
     category = db.relationship('Category', back_populates='sets')
     cards = db.relationship('Card', back_populates='set')
     votes = db.relationship('Vote', back_populates='set')
+    favorites = db.relationship('User', secondary=favorites_table)
 
     def to_dict(self):
         return {
@@ -74,6 +80,7 @@ class Set(db.Model):
             # returns votes info list from votes relationship
             'votes': [vote.to_dict() for vote in self.votes],
             # returns favorites info list
+            'favorites': [favorite.to_dict_favorites() for favorite in self.favorites]
         }
 
 
