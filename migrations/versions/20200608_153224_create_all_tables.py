@@ -1,7 +1,7 @@
 """create all tables
 
 Revision ID: be0d4210024a
-Revises: 
+Revises:
 Create Date: 2020-06-08 15:32:24.353980
 
 """
@@ -152,7 +152,7 @@ def upgrade():
             'created_at': datetime.now()
         },
         {
-            'title': 'Sorting',  # 5 Brandon
+            'title': 'Sorting',  # 5 Brandon √
             'description': 'Learn about different sorting mechanisms.',
             'category_id': 2,
             'user_id': 1,
@@ -229,7 +229,7 @@ def upgrade():
             'created_at': datetime.now()
         },
         {
-            'title': 'Flask',  # 16 Brandon
+            'title': 'Flask',  # 16Brandon
             'description': 'Dive into Flask!',
             'category_id': '7',
             'user_id': 1,
@@ -245,8 +245,768 @@ def upgrade():
     ])
 
     op.bulk_insert(cards_table, [
-        # {
-        #     'term':}
+        {
+            'term': 'Graphs represent _____ relationships between objects',
+            'definition': 'Graphs represent pairwise relationships between objects',
+            'set_id': 2
+        },
+        {
+            'term': 'a graph is a _____ more than a collection',
+            'definition': 'a graph is a model more than a collection',
+            'set_id': 2
+        },
+        {
+            'term': 'the four basic graph types are',
+            'definition': '''1. undirected and unweighted,
+        2. undirected and weighted,
+        3. directed and unweighted,
+        directed and weighted
+        ''',
+            'set_id': 2
+        },
+        {
+            'term': 'What is adjacency',
+            'definition': 'the basic connectedness property of vertices',
+            'set_id': 2
+        },
+        {
+            'term': 'Symmetric Matrix',
+            'definition': 'Undirected graphs will always have a symmetric matrix',
+            'set_id': 2
+        },
+        {
+            'term': 'When is an index null in a directed list',
+            'definition': 'When the index does not point to anything, it is null',
+            'set_id': 2
+        },
+        {
+            'term': 'Self Loop',
+            'definition': 'An edge that links a vertex to itself',
+            'set_id': 2
+        },
+        {
+            'term': 'Simple Graph',
+            'definition': 'A graph with no self loops',
+            'set_id': 2
+        },
+        {
+            'term': 'Directed Graphs',
+            'definition': 'Paths must follow the directions of the edges',
+            'set_id': 2
+        },
+        {
+            'term': 'Simple Path',
+            'definition': 'A path that does not cross the same edge twice',
+            'set_id': 2
+        },
+        {
+            'term': 'What is a cycle in a graph',
+            'definition': 'A cycle in a graph is a simple path that starts and ends at the same vertex',
+            'set_id': 2
+        },
+        {
+            'term': 'Acyclic Graph',
+            'definition': 'A graph with no cycles',
+            'set_id': 2
+        },
+        {
+            'term': 'What is a variable',
+            'definition': 'Container for a piece of data',
+            'set_id': 6
+        },
+        {
+            'term': 'Are variables case sensitive',
+            'definition': 'Yes',
+            'set_id': 6
+        },
+        {
+            'term': 'What will an undeclared variable return',
+            'definition': 'Undefined',
+            'set_id': 6,
+        },
+        {
+            'term': 'Two types of variable scope',
+            'definition': 'Local and global',
+            'set_id': 6,
+        },
+        {
+            'term': 'Properties of local scope',
+            'definition': 'Within a function, only available within a function',
+            'set_id': 6,
+        },
+        {
+            'term': 'Properties of Global Scope',
+            'definition': 'Outside a function, available to any code outside or within that function',
+            'set_id': 6,
+        },
+        {
+            'term': 'What is variable hoisting',
+            'definition': 'Variables are hoisted to the top of the function/statement',
+            'set_id': 6
+        },
+        {
+            'term': 'Prototype Based',
+            'definition': 'Each object has a prototype that inherits properties and abilities from',
+            'set_id': 6
+        },
+        {
+            'term': 'Dynamic Typing',
+            'definition': 'Dynamic if the type of variable is interpreted at runtime',
+            'set_id': 6
+        },
+        {
+            'term': 'First Class Function',
+            'definition': 'Treats functions as first class citizens and can do things with functions everything you can do with other elements',
+            'set_id': 6
+        },
+        {
+            'term': 'Multi Paradigm Language',
+            'definition': 'Supports more than one programming paradigm - devs can work with a variety of styles within js',
+            'set_id': 6
+        },
+        {
+            'term': 'DOM',
+            'definition': 'Document Object Model',
+            'set_id': 6
+        },
+        {
+            'term': 'Two ways to add js to your site',
+            'definition': 'Internally and externally',
+            'set_id': 6
+        },
+        {
+            'term': 'Is JS case sensitive?',
+            'definition': 'yes',
+            'set_id': 6,
+        },
+        {
+            'term': 'Define a boolean',
+            'definition': 'true or false',
+            'set_id': 6,
+        },
+        {
+            'term': 'Define array',
+            'definition': 'Used to store multiple values in a single value',
+            'set_id': 6,
+        },
+        {
+            'term': 'Down Method',
+            'definition': 'Undo what was done by the up method',
+            'set_id': 11,
+        },
+        {
+            'term': 'Limit Query',
+            'definition': 'Limit the number of returned results',
+            'set_id': 11
+        },
+        {
+            'term': 'Order to query results',
+            'definition': 'Order',
+            'set_id': 11
+        },
+        {
+            'term': 'Validation',
+            'definition': 'Security layer that validates information before you put it in your database',
+            'set_id': 11,
+        },
+        {
+            'term': 'Not empty validation',
+            'definition': 'Makes sure it isnt empty',
+            'set_id': 11,
+        },
+        {
+            'term': 'Atomic Unit',
+            'definition': 'Indivisible unit',
+            'set_id': 11,
+        },
+        {
+            'term': 'What does HTMl stand for',
+            'definition': 'hyper text markup language',
+            'set_id': 15
+        },
+        {
+            'term': '<br>',
+            'definition': 'Defines a line break',
+            'set_id':  15
+        },
+        {
+            'term': 'Diff between padding and margin',
+            'definition': 'Padding is on the inside and border is on the outside',
+            'set_id': 15
+        },
+        {
+            'term': 'Absolute file path',
+            'definition': 'The full url to the internet file',
+            'set_id': 15
+        },
+        {
+            'term': 'Relative File Path',
+            'definition': 'File path points to a file in the images folder located at the root of the current web',
+            'set_id': 15
+        },
+        {
+            'term': 'What is 10vw',
+            'definition': '10% of the view port with',
+            'set_id': 15
+        },
+        {
+            'term': 'Server-sent events',
+            'definition': 'Allow a web page to get updates from a server',
+            'set_id': 15
+        },
+        {
+            'term': 'SQL expression language',
+            'definition': 'Allows SQL statements to be written using python expressions',
+            'set_id': 13
+        },
+        {
+            'term': 'Schema/Types',
+            'definition': 'Uses python objects to represent tables, columns and datatypes',
+            'set_id': 13
+        },
+        {
+            'term': 'Psychopg2',
+            'definition': 'Adaptor for PostGres DB',
+            'set_id': 13
+        },
+        {
+            'term': 'What is table.columns.keys',
+            'definition': 'Is similar to an associative array of all the columns of a table',
+            'set_id': 13
+        },
+        {
+            'term': 'What does a string become when you run a table in the db?',
+            'definition': 'A varchar',
+            'set_id': 13
+        },
+        {
+            'term': 'How do you apply a data constrain to a table?',
+            'definition': 'Using the CHECK SQL command',
+            'set_id': 13
+        },
+        {
+            'term': 'What to things SQL Alchemy is composed of?',
+            'definition': '1. The engine, 2. The inspect function',
+            'set_id': 13
+        },
+        {
+            'term': 'What does importing the engine do?',
+            'definition': 'Creates an engine based on the connection string',
+            'set_id': 13
+        },
+        {
+            'term': 'What are some dialects of SQLalchemy?',
+            'definition': 'sqlite, mysql, postgresql, oracle, mssql',
+            'set_id': 13
+        },
+        {
+            'term': 'Are primary keys auto-incrementing?',
+            'definition': 'yes',
+            'set_id': 13
+        },
+        {
+            'term': 'What is the template for connecting to the database?',
+            'definition': 'dialect+driver://username:password@host:port/database',
+            'set_id': 13
+        },
+        {
+            'term': 'Name two objects that are available in browser runtimes but not in NodeJS.',
+            'definition': 'Common answers include `window`, `document`, and `location`.',
+            'set_id': 17
+        },
+        {
+            'term': 'What name can be used in browser runtimes to reference the "global object"?',
+            'definition': '`window`',
+            'set_id': 17
+        },
+        {
+            'term': 'Why might one choose to use async fs opposed to synchronous fs?',
+            'definition': '''
+                            Operations on our file system can take some time
+                            because data from our hard drive must be read or
+                            written. Performing these operations asynchronously
+                            prevents the single thread of our JavaScript program
+                            from being blocked during these operations.
+                            ''',
+            'set_id': 17
+        },
+        {
+            'term': 'What is the name of the node module that allows us to perform operations on our local file system?',
+            'definition': '`fs`',
+            'set_id': 17
+        },
+        {
+            'term': 'What is require used for?',
+            'definition': '''
+                1) Allows the built in Node modules to be used in a JS file.(http, FS)
+                2) Load 3rd party Libraries created by others (Express, Sequalize).
+                3) Other files we've made can be "required" into our current file.''',
+            'set_id': 17
+        },
+        {
+            'term': 'How do you require the built in FS module?',
+            'definition': '''
+                In a node.js file, require FS with: "const fs = require("fs")""
+                Simple Example:
+                "const fs = require("fs");
+                fs.appendFile('mynewfile1.txt', 'Hello content!', function (err) {
+                    if (err) throw err;
+                    console.log('Saved!');
+                });"''',
+            'set_id': 17
+        },
+        {
+            'term': 'What is the name of the node module that allows us to take user input?',
+            'definition': '`readline`',
+            'set_id': 17
+        },
+        {
+            'term': 'What site should be used as a documentation reference for JavaScript in browser runtimes?',
+            'definition': '''MDN, Mozilla Developer Network
+                            (https://developer.mozilla.org/en-US/docs/Web/JavaScript)''',
+            'set_id': 17
+        },
+        {
+            'term': 'What site should be used as a documentation reference for JavaScript in Node runtimes?',
+            'definition': 'NodeJS.org (https://nodejs.org/api/)',
+            'set_id': 17
+        },
+        {
+            'term': 'Define `callback`',
+            'definition': '''A function passed to another function
+                            which we assume will be invoked at some point.''',
+            'set_id': 17
+        },
+        {
+            'term': 'Define `algorithms`',
+            'definition': '''A process or set of rules to be followed in calculations or other problem-solving operations.''',
+            'set_id': 4
+        },
+        {
+            'term': 'How does space and time complexity relate to algorithms?',
+            'definition': '''Space and time complexity are both essential when choosing or designing an algorithm.
+                        Space complexity deals with the memory space required for the algorithm. Time complexity deals
+                        with the amount of time it takes for the full algorithm to complete. Space and time complexity
+                        should be considered for all data sizes and especially larger data sets. ''',
+            'set_id': 4
+        },
+        {
+            'term': 'What is the process of memoization?',
+            'definition': '''
+                        Memoization is a technique to optimize the time complexity
+                        of an algorithm by storing the results of expensive function
+                        calls and returning the cached result when the same inputs
+                        occur again.
+        ''',
+            'set_id': 4
+        },
+        {
+            'term': 'What is the process of tabulation?',
+            'definition': '''
+                       Tabulation is a technique to optimize time  complexity of
+                       an algorithm by filling out a table with elements.
+        ''',
+            'set_id': 4
+        },
+        {
+            'term': 'What are the 7 most common complexity classes?',
+            'definition': '''O(1) - constant
+                        O(log(n)) - logarithmic
+                        O(n) - linear
+                        O(n * log(n)) - loglinear, linearithmic, quasilinear
+                        O(n^c) - O(n^2)... - polynomial
+                        O(c^n) - O(2^n)... - exponential
+                        O(n!) - factorial''',
+            'set_id': 4
+        },
+        {
+            'term': 'How does bubble sort work?',
+            'definition': '''
+                        Bubble sort manipulates the data structure by
+                        swapping the position of two elements.
+                        Time Complexity: O(n^2) - polynomial
+                        Space Complexity: O(1) - constant
+                        Bubblle sort is very inefficient, and
+                        does not have many practical uses.
+                        ''',
+            'set_id': 4
+        },
+        {
+            'term': 'How does selection sort work?',
+            'definition': '''
+                        Selection sort requires us to locate the
+                        smallest value in the array.
+                        Time Complexity: O(n^2) - polynomial
+                        Space Complexity: O(1)
+                        Due to its time complexity, selection
+                        sort is not a very practical algorithm.
+        ''',
+            'set_id': 4
+        },
+        {
+            'term': 'How does insertion sort work?',
+            'definition': '''
+                        Insertion sort is a simple sorting algorithm
+                        that is similar to how we sort playing cards in our hands.
+                        Time Complexity: O(n^2) - polynomial
+                        Space Complexity: O(1)
+                        Insertion sort works well with streaming data,
+                        because it can sort data as it comes in.
+        ''',
+            'set_id': 4
+        },
+        {
+            'term': 'How does merge sort work?',
+            'definition': '''
+                        Merge Sort is a classic example of a "Divide and Conquer"
+                        algorithm. In other words, we keep breaking the array into
+                        smaller and smaller sub arrays.
+                        Time complexity: O(n log(n)) - logarithm
+                        Space Complexity: O(n) - linear
+                        Merge sort is one of the fastest algorithms we can use
+                        on an unknown dataset. However, the space being linear
+                        can cause issues with larger datasets.
+        ''',
+            'set_id': 4
+        },
+        {
+            'term': 'Insertion Sort',
+            'definition': 'Sorts a list by placing each element in the position it should be in and gradually adding more elements one by one., A sort in which each item in a set is inserted into its proper position in the sorted set according to a specified criterion.',
+            'set_id': 5
+        },
+        {
+            'term': 'Selection Sort',
+            'definition': '''
+                        Sorts a list by searching for the 1st element, then the 2nd, and so on until all the elements are in place., A sort in which the items in a set are examined to find an item that fits specified criteria. This item is appended to the sorted set and removed from further consideration, and the process is repeated until all items are in the sorted set.''',
+            'set_id': 5
+        },
+        {
+            'term': 'Bubble Sort',
+            'definition': '''
+                            A sort in which the first two items to be sorted are examined and exchanged if necessary to place them in the specified order; the second item is then compared with the third (exchanging them if required), the third is compared with the fourth, and the process is repeated until all pairs have been examined and all items are in the proper sequence.''',
+            'set_id': 5
+        },
+        {
+            'term': 'Quicksort',
+            'definition': 'A sort in which a list is first partitioned into lower and upper sublists for which all keys are, respectively, less than some pivot key or greater than the pivot key. See also the definitions for "bubble sort", "selection sort" and "insertion sort".',
+            'set_id': 5
+        },
+        {
+            'term': 'Mergesort',
+            'definition': '''
+                            Splits the list into sub-lists and then reconstructs the original list.''',
+            'set_id': 5
+        },
+        {
+            'term': 'Heap Sort',
+            'definition': '''
+                            This algorithm is based on the heap data structure, and is a more efficient version of selection sort. It determines the largest element. Then, it places that element at the end (or beginning) of the list, and then repeats the process with the rest of the list Recall that in a heap, the top element of the heap is always "next" in order (either the next highest or next lowest, in the case of numbers). If you were to take all of your input values and store them in a heap, and remove one element at a time, the elements will be removed in sorted order. Depending on the data list being sorted, this could have performance consequences. Heap sort is considered an "instable" sort because it doesn't preserve the original order of equal elements.''',
+            'set_id': 5
+        },
+        {
+            'term': 'Stable Sort',
+            'definition': '''
+                            Any sort method that does not change the order of equal-rank elements.
+                            ''',
+            'set_id': 5
+        },
+        {
+            'term': 'Comparison sort',
+            'definition': 'A sort that ranks items by comparing them to each other. As opposed to a sort that uses some other method, like the radix sort that analyzes the bits of each number.',
+            'set_id': 5
+        },
+        {
+            'term': 'Insertion sort time complexity',
+            'definition': 'O(n^2) worst case, O(n) best case',
+            'set_id': 5
+        },
+        {
+            'term': 'Heap sort time complexity',
+            'definition': 'O(n log n) in all cases',
+            'set_id': 5
+        },
+        {
+            'term': 'Quicksort time complexity',
+            'definition': 'O(n^2) in the very unlikely worst case, O(n log n) in other cases',
+            'set_id': 5
+        },
+        {
+            'term': 'Selection sort time complexity',
+            'definition': 'O(n ^ 2) in all cases',
+            'set_id': 5
+        },
+        {
+            'term': 'Bubble sort time complexity',
+            'definition': 'O(n^2) worst case, O(n) best case',
+            'set_id': 5
+        },
+        {
+            'term': 'Mergesort time complexity',
+            'definition': 'O(n log n) in all cases',
+            'set_id': 5
+        },
+        {
+            'term': 'True',
+            'definition': 'A constant representing the true value of the boolean type.',
+            'set_id': 8
+        },
+        {
+            'term': 'False',
+            'definition': 'A constant representing the false value of the boolean type.',
+            'set_id': 8
+        },
+
+        {
+            'term': 'None',
+            'definition': 'A constant frequently used to represent the absence of a value, as when default arguments are not passed to a function.',
+            'set_id': 8
+        },
+        {
+            'term': 'strings',
+            'definition': 'A string literal, or string, holds any combination of letters and numbers you would like it to hold. Any number it holds, however, is not treated like a numerical value but is preserved as if it were a word.',
+            'set_id': 8
+        },
+        {
+            'term': 'integers',
+            'definition': 'An integer in Python, also known as a \'numeric literal\', is simply a name used for a numeric value. For this reason, these values are commonly called integers even if they are assigned the value of a real number in the form of an integer and a decimal value.',
+            'set_id': 8
+        },
+
+        {
+            'term': 'floating point number',
+            'definition': '''A real number (that is, a number that can contain a fractional part).
+
+                To convert a number into floating point:
+                >> a = 1
+                >> b = float(a)
+                1.0''',
+            'set_id': 8
+        },
+
+        {
+            'term': 'lists',
+            'definition': '''A list is a series of values. In Python, these values are assigned by placing them within square braces and separating them by commas like this:
+                            < name of list > = [ < value > , < value > , < value > ]
+                            girls=['sugar', 'spice', 'everything nice']
+                            To access a part of a list, one uses the same kind of phrase as one used for a string literal:
+                            < name of list > [< index number > ]
+                            ''',
+            'set_id': 8
+        },
+        {
+            'term': 'tuple',
+            'definition': '''Tuples can be thought of as read-only lists. One can index, slice and concatenate, but one cannot append or alter the values of the tuple after it has been initialized.
+                                directions=('north', 'south', 'east', 'west')
+                            ''',
+            'set_id': 8
+        },
+
+        {
+            'term': 'dictionary',
+            'definition': '''
+                    Dictionary is the Python term for an associative array. An array is, like a list, a series of values in two dimensions. An associative array gives one a way of accessing the values by a key, a term associated with the value instead of an item's index number.
+
+                        These are similar to hashes in Ruby.
+
+                        my_dictionary={"author": "Andrew Melville",
+                        "title": "Moby Dick",
+                        "year": "1851",
+                        "copies": 5000000
+                        }
+
+                        One accesses a dictionary member by its key:
+
+                        >> > a=my_dictionary["author"]
+                        >> > print a
+                        Andrew Melville
+                        ''',
+            'set_id': 8
+        },
+
+        {
+            'term': 'complex number',
+            'definition': '''
+        Complex numbers have a real and imaginary part, which are each a floating point number.
+
+        >> a=1
+        >> b=complex(a)
+        (1+0j)''',
+            'set_id': 8
+        },
+        {
+            'term': 'long number',
+            'definition': '''
+        Long integers have unlimited precision.
+
+        >> a=1
+        >> b=long(a)
+        1L
+
+        Long numbers also take up a lot of processing power.''',
+            'set_id': 8
+        },
+
+        {
+            'term': 'What is the difference between an element and an attribute?',
+            'definition': '''An element in HTML represents some kind of structure or semantics and 
+        generally consists of a start tag, content, and an end tag.
+        An attribute defines a property for an element, consists of an attribute/value pair, and appears within the element's start tag. An element's start tag may contain any number of space separated attribute/value pairs.''',
+            'set_id': 14
+        },
+        {
+            'term': 'What are at least two different ways to select a div with the ID of"container"in vanilla JavaScript?',
+            'definition': 'Document​.get​Element​ById() Document​.query​Selector()',
+            'set_id': 14
+        },
+        {
+            'term': 'What is the difference between an ID and a class?',
+            'definition': '''In the CSS, a class selector is a name preceded by a full stop(".") and an ID selector is a name preceded by a hash character("#").
+
+        The difference between an ID and a class is that an ID can be used to identify one element, whereas a class can be used to identify more than one.''',
+            'set_id': 14
+        },
+
+        {
+            'term': 'Describe specificity in CSS and give examples.',
+            'definition': '''is the means by which browsers decide which CSS property values are the most relevant to an element.
+
+                If there are two or more conflicting CSS rules that point to the same element, the browser follows some rules to determine which one is most specific and therefore wins out.
+
+
+                Inline styles - An inline style is attached directly to the element to be styled. Example: < h1 style="color: #ffffff;" > .
+
+                IDs - An ID is a unique identifier for the page elements, such as  # navbar.
+
+                Classes, attributes and pseudo-classes - This category includes .classes, [attributes] and pseudo-classes such as:hover, :focus etc.
+
+                Elements and pseudo-elements - This category includes element names and pseudo-elements, such as h1, div, :before and :after.''',
+            'set_id': 14
+        },
+        {
+            'term': 'What is event delegation and when would you use it?',
+            'definition': '''strategy we can use to optimize the web apps when responding to user events.
+
+                add the event listener to the parent, when the evet target is clicked, which will trigger the parent event listener, and find the event which is triggered.
+
+                event.target identifies the HTML elements on which the event occurred. and we also know what element we want to listen for.
+
+                event bubbling/propagation: it means when the user makes a click it ripples up all the way up to the top of the DOM and triggers clicks events on all the parent elements of the event you clicked.
+
+                **Because of event bubbling you can place an event listener on a single parent HTML element that lives above a HTML child, and that event listener will get executed whenever an event occurs on any of its child nodes — even if these node children are added to the page after the initial load!
+
+                Whenever a user makes a click it ripples up all the way up to the top of the DOM and triggers clicks events on all the parent elements of the element you clicked.
+
+                Why:
+                    Without event delegation you would have to rebind the click event listener to each new input loaded to the page. Coding this is complicated and burdensome.''',
+            'set_id': 14
+        },
+        {
+            'term': 'What does e.preventDefault()do?What is event bubbling?',
+            'definition': '''The preventDefault() method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur.
+
+                - Clicking on a "Submit" button, prevent it from submitting a form
+                - Clicking on a link, prevent the link from following the URL
+
+
+                event bubbling/propagation: it means when the user makes a click it ripples up all the way up to the top of the DOM and triggers clicks events on all the parent elements of the event you clicked.
+
+                **Because of event bubbling you can place an event listener on a single parent HTML element that lives above a HTML child, and that event listener will get executed whenever an event occurs on any of its child nodes — even if these node children are added to the page after the initial load!''',
+            'set_id': 14
+        },
+        {
+            'term': 'AJAX',
+            'definition': 'Ajax is a technique for creating seamless interactive websites via asynchronous data exchange between client and server. Ajax facilitates communication with the server via partial page updates instead of the traditional full-page refresh.',
+            'set_id': 14
+        },
+        {
+            'term': 'AMD',
+            'definition': '''
+            AMD is a standard defining how to load JavaScript libraries or modules asynchronously
+
+            AMD stands for Asynchronous Module Definition. It is an alternative to CommonJS(CJS) specification.
+
+            The API specifies a mechanism for defining modules such that the module and its dependencies can be asynchronously loaded. This is particularly well suited for the browser environment where synchronous loading of modules incurs performance, usability, debugging, and cross-domain access problems.''',
+            'set_id': 14
+        },
+        {
+            'term': 'What is the DOM?',
+            'definition': '''
+                DOM(for Document Object Model) is a platform - and language-neutral interface that will allow programs and scripts to dynamically access and update the content, structure and style of documents. The document can be further processed and the results of that processing can be incorporated back into the presented page. This is an overview of DOM-related materials here at W3C and around the web.''',
+            'set_id': 14
+        },
+        {
+            'term': 'Flask is a',
+            'definition': 'micro framework for Python web development',
+            'set_id': 16
+        },
+        {
+            'term': 'Flask is a micro framework because',
+            'definition': 'it implements only core functionality (including routing) but leaves more advanced functionality (including authentication and database ORMs) to extensions',
+            'set_id': 16
+        },
+        {
+            'term': 'app = Flask(__name__)',
+            'definition': '''
+            creates an instance of the Flask object using our module's name as a parameter''',
+            'set_id': 16
+        },
+        {
+            'term': '@app.route("/")',
+            'definition': '''
+                            means that the function directly below it should be called whenever a user visits the main root page of our web application
+                        ''',
+            'set_id': 16
+        },
+        {
+            'term': 'How do you collect data from a URL parameter using Flask?',
+            'definition': '''You can specify the variable in the app.route and then use that variable as a paramater in the routing function. Here is an example of the pretzel:
+
+                            ```py
+                            @ app.route('/foods/<food>')
+                            def grocery(food):
+                            x=food
+                            ```''',
+            'set_id': 16
+        },
+        {
+            'term': 'How do you collect data from the query string using Flask?',
+            'definition': '''
+                            With a query string the data can be found in the request.args dictionary:
+
+                            ```py
+                            @ app.route('/foods')
+                            def grocery():
+                            x=request.args.get('type')
+                            ```''',
+            'set_id': 16
+        },
+        {
+            'term': 'How do you collect data from the body of the request using Flask?',
+            'definition': '''You can get the data form a post request in the body using the request.form dictionary
+
+                        ```py
+                        @ app.route('/foods')
+                        def grocery():
+                        x=request.form.get('type')
+                        ```''',
+            'set_id': 16
+        },
+        {
+            'term': 'What is the session object in Flask?',
+            'definition': 'The session object is built off of using cookies. It allows the server to set many different things in the in the session for the client to remember wihout having to create many different cookies and just have one session. It is also encoded so that someone can\'t change session data on the client before sending it to the server.',
+            'set_id': 16
+        },
+        {
+            'term': 'What exactly does Flask\'s \`jsonify()\` do?',
+            'definition': 'jsonify will take JSON serializeable data in python and convert it to a JSON string.',
+            'set_id': 16
+        },
+        {
+            'term': 'What is the difference between authorization and authentication?',
+            'definition': 'Authentication refers to the process of verifying who you are whereas authorization is the process of verifying that you have access to something. For example, you can authenticate someones login and then make sure they have access to their profile by authorization.',
+            'set_id': 16
+        },
+
     ])
 # ### end Alembic commands ###
 
