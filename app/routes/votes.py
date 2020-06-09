@@ -11,7 +11,7 @@ bp = Blueprint('votes', __name__, url_prefix='/sets')
 # Error handler
 @bp.errorhandler(AuthError)
 def handle_auth_error(ex):
-    response = jsonify(ex.erreor)
+    response = jsonify(ex.error)
     response.status_code = ex.status_code
     return response
 

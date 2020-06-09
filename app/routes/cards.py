@@ -1,7 +1,9 @@
 from flask import Blueprint
 from flask_cors import cross_origin
 from ..auth import *
-from app.models import db, User, Card
+from app.models import db, User, Card, Set
+import requests
+import json
 
 bp = Blueprint("cards", __name__, url_prefix='/cards')
 
@@ -36,3 +38,36 @@ def create_card():
     db.session.add(card)
     db.session.commit()
     return card.to_dict(), 201
+
+
+# #update a card
+# @bp.route('/<int:card_id>', method=['PATCH'])
+# @cross_origin(headers=["Content-Type", "Authorization"])
+# @requires_auth
+# def update_card():
+#     pass
+
+
+# Delete a card
+@bp.route('/<int:card_id>', methods=['DELETE']  )
+@cross_origin(headers=["Content-Type", "Authorization"])
+@requires_auth
+def delete_card(card_id):
+    # data = request.json
+
+    # gets decodes userinfo out of token using auth0 api
+    token = request.headers.get('Authorization')
+    req = requests.get('https://codelet-app.auth0.com/userinfo',
+                       headers={'Authorization': token}).content
+    userInfo = json.loads(req)
+    userId = User.query.filter_by(email=userInfo['email']).first().id
+
+    card = Card.query.get(card_id)
+    parentSet = Set.query.get(card.set_id)
+    creator_id = parentSet.user_id
+    if userId == creator_id:
+        db.session.delete(card)
+        db.session.commit()
+        return 'Deleted', 204
+    else:
+        return 401
