@@ -888,7 +888,7 @@ def upgrade():
 
         {
             'term': 'What is the difference between an element and an attribute?',
-            'definition': '''An element in HTML represents some kind of structure or semantics and 
+            'definition': '''An element in HTML represents some kind of structure or semantics and
         generally consists of a start tag, content, and an end tag.
         An attribute defines a property for an element, consists of an attribute/value pair, and appears within the element's start tag. An element's start tag may contain any number of space separated attribute/value pairs.''',
             'set_id': 14
@@ -1046,7 +1046,162 @@ def upgrade():
             'definition': 'Authentication refers to the process of verifying who you are whereas authorization is the process of verifying that you have access to something. For example, you can authenticate someones login and then make sure they have access to their profile by authorization.',
             'set_id': 16
         },
-
+        {
+            'term': 'What is a tree?',
+            'definition': '''
+                        A tree is a graph that does not contain any cycles.
+                        A cycle is is defined as a path through edges that
+                        begins and ends at the same node. A tree will always
+                        have a root node
+        ''',
+            'set_id': 1
+        },
+        {
+            'term': 'What is a binary tree?',
+            'definition': '''
+                        A binary tree is a tree where each node has at most
+                        two children.
+        ''',
+            'set_id': 1
+        },
+        {
+            'term': 'What is a leaf node?',
+            'definition': 'A node that doesn\'t have children.',
+            'set_id': 1
+        },
+        {
+            'term': 'What is a root node?',
+            'definition': '''
+                        The ultimate parent, the single node of a tree that
+                         can access every other node through edges; by definition
+                          the root will not have a parent.
+        ''',
+            'set_id': 1
+        },
+        {
+            'term': 'What is an internal node?',
+            'definition': 'A node that has children.',
+            'set_id': 1
+        },
+        {
+            'term': 'How does a breadth-first search traverse a tree?',
+            'definition': '''
+                        In BFS, trees are traversed level-by-level, where you visit
+                        every node on a level before going to a lower level. This
+                        search is referred to as breadth-first search (BFS),
+                        as the search tree is broadened as much as possible
+                        on each depth before going to the next depth.
+        ''',
+            'set_id': 1
+        },
+        {
+            'term': 'How does a depth-first search traverse a tree?',
+            'definition': '''
+                        IN DFS, trees are traversed as deep as possible on each child
+                        before going to the next sibling, thus the name `Depth-first`.
+        ''',
+            'set_id': 1
+        },
+        {
+            'term': 'At most, how many children can each node have in a ternary tree? N-ary tree?',
+            'definition': 'Ternary trees have at most 3 children. N-ary trees have at most n children.',
+            'set_id': 1
+        },
+        {
+            'term': 'How do binary search trees differ from binary trees?',
+            'definition': '''
+                        A binary search tree is a search tree with the additional added criteria:
+                        - Given any node of the BST, the values in the left subtree must all be
+                        strictly less than the given node's value.
+                        - Given the same node of the BST, the values in the right subtree must all
+                        be greater than or equal to the given node's value.
+        ''',
+            'set_id': 1
+        },
+        {
+            'term': 'Explain what makes a binary tree full, complete, or perfect.',
+            'definition': '''
+                        Full Binary Tree - each node has exactly 0 or 2 children.
+                        Complete Binary Tree - all levels except the last one are full with nodes.
+                        Perfect Binary Tree - all levels (including the last one) are full of nodes.
+                        ''',
+            'set_id': 1
+        },
+        {
+            'term': 'What are the different ways to write a string literal in JS?',
+            'definition': '`string`, "string", \'string\'',
+            'set_id': 7
+        },
+        {
+            'term': 'What are the diffent ways to write a variable in JS?',
+            'definition': '''
+                        const variable =...;
+                        let variable =...;
+                        var variable =...;
+                        ''',
+            'set_id': 7
+        },
+        {
+            'term': 'What are the different ways to write a function in JS?',
+            'definition': '''
+                        function foo(params) {return}
+                        const foo = function(params) {return}
+                        const foo = (params) => return
+        ''',
+            'set_id': 7
+        },
+        {
+            'term': 'How would you invoke the function foo in JS?',
+            'definition': 'foo(args);',
+            'set_id': 7
+        },
+        {
+            'term': 'How do you write an object literal in JS?',
+            'definition': '''const obj = {
+                            "property1":value1,
+                            "property2":value2,
+                            "key": value3
+                            };
+                    ''',
+            'set_id': 7
+        },
+        {
+            'term': 'How do you write an array literal in JS?',
+            'definition': 'const arr = [v1, v2, ..., vn]; ',
+            'set_id': 7
+        },
+        {
+            'term': 'What are the different error types in JS?',
+            'definition': '''
+                        EvalError
+                        InternalError
+                        RangeError
+                        ReferenceError
+                        SyntaxError
+                        TypeError
+                        URIError
+        ''',
+            'set_id': 7
+        },
+        {
+            'term': 'How would you select a DOM element with an id of "bar" in JS?',
+            'definition': 'const barEle = document.getElementById("bar");',
+            'set_id': 7
+        },
+        {
+            'term': 'How can you insert values into an array from an array without directly inserting each value?',
+            'definition': '''
+                        const arr1 = [3, 4, 5];
+                        const arr2 = [1, 2, ...vals];
+                        console.log(arr2) // => [1, 2, 3, 4, 5]
+                        ''',
+            'set_id': 7
+        },
+        {
+            'term': 'What values are considered falsey in JS?',
+            'definition': '0, 0n, null, undefined, false, NaN, ""',
+            'set_id': 7
+        },
     ])
 # ### end Alembic commands ###
 
