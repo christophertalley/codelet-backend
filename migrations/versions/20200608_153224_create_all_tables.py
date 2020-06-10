@@ -489,7 +489,7 @@ def upgrade():
         },
         {
             'term': 'What is the correct HTML for making a text input field?',
-            'definition': '<input type = "text",
+            'definition': '<input type = "text"',
             'set_id': 15
         },
 
@@ -497,57 +497,57 @@ def upgrade():
         {
             'term': 'SQL expression language',
             'definition': 'Allows SQL statements to be written using python expressions',
-            'set_id': 13
+            'set_id': 12
         },
         {
             'term': 'Schema/Types',
             'definition': 'Uses python objects to represent tables, columns and datatypes',
-            'set_id': 13
+            'set_id': 12
         },
         {
             'term': 'Psychopg2',
             'definition': 'Adaptor for PostGres DB',
-            'set_id': 13
+            'set_id': 12
         },
         {
             'term': 'What is table.columns.keys',
             'definition': 'Is similar to an associative array of all the columns of a table',
-            'set_id': 13
+            'set_id': 12
         },
         {
             'term': 'What does a string become when you run a table in the db?',
             'definition': 'A varchar',
-            'set_id': 13
+            'set_id': 12
         },
         {
             'term': 'How do you apply a data constrain to a table?',
             'definition': 'Using the CHECK SQL command',
-            'set_id': 13
+            'set_id': 12
         },
         {
             'term': 'What to things SQL Alchemy is composed of?',
             'definition': '1. The engine, 2. The inspect function',
-            'set_id': 13
+            'set_id': 12
         },
         {
             'term': 'What does importing the engine do?',
             'definition': 'Creates an engine based on the connection string',
-            'set_id': 13
+            'set_id': 12
         },
         {
             'term': 'What are some dialects of SQLalchemy?',
             'definition': 'sqlite, mysql, postgresql, oracle, mssql',
-            'set_id': 13
+            'set_id': 12
         },
         {
             'term': 'Are primary keys auto-incrementing?',
             'definition': 'yes',
-            'set_id': 13
+            'set_id': 12
         },
         {
             'term': 'What is the template for connecting to the database?',
             'definition': 'dialect+driver://username:password@host:port/database',
-            'set_id': 13
+            'set_id': 12
         },
         {
             'term': 'Name two objects that are available in browser runtimes but not in NodeJS.',
