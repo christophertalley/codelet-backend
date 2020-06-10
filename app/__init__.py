@@ -11,6 +11,7 @@ from .routes import users, cards, sets, categories, votes, favorites
 from .auth import *
 
 from .config import Configuration
+from elasticsearch import Elasticsearch
 
 # sql logging
 # import logging
@@ -21,6 +22,9 @@ from .config import Configuration
 app = Flask(__name__)
 app.config.from_object(Configuration)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
+
+app.elasticsearch = Elasticsearch([app.config['ELASTICSEARCH_URL']]) \
+    if app.config['ELASTICSEARCH_URL'] else None
 
 app.register_blueprint(users.bp)
 app.register_blueprint(cards.bp)

@@ -2,12 +2,14 @@
 
 Revision ID: be0d4210024a
 Revises:
-Create Date: 2020-06-08 15:32:24.353980
+C
+reate Date: 2020-06-08 15:32:24.353980
 
 """
 from alembic import op
 import sqlalchemy as sa
 from datetime import datetime
+from app.models import db, User, Set, Card
 
 
 # revision identifiers, used by Alembic.
