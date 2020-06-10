@@ -70,7 +70,7 @@ def create_set():
 @cross_origin(headers=["Content-Type", "Authorization"])
 def search():
     Set.reindex()
-    query, total = Set.search('algor', 1, 5)
-    print(query.all())
+    search_term = request.args.get('search_term')
+    query, total = Set.search(search_term, 1, 5)
     sets = query.all()
     return jsonify([set.to_dict() for set in sets])
