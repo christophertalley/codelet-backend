@@ -419,6 +419,23 @@ def upgrade():
             'definition': 'Indivisible unit',
             'set_id': 11,
         },
+
+        {
+            'term': 'What is the sequelize command used to create a database?',
+            'definition': 'db:create',
+            'set_id': 11
+        },
+        {
+            'term': 'What is an associate function?',
+            'definition': 'Where you define the association between two models',
+            'set_id': 11
+        },
+
+        {
+            'term': 'What is cascade delete?',
+            'definition': 'A handy shortcut for deleting the associate records of a row your deleting',
+            'set_id': 11
+        },
         {
             'term': 'What does HTMl stand for',
             'definition': 'hyper text markup language',
@@ -454,6 +471,29 @@ def upgrade():
             'definition': 'Allow a web page to get updates from a server',
             'set_id': 15
         },
+        {
+            'term': 'What are CSS (cascading style sheets)?',
+            'definition': 'It is a language for defining style for web documents',
+            'set_id': 15
+        },
+        {
+            'term': 'What is the correct HTML element for the largest heading?',
+            'definition': 'An h1',
+            'set_id': 15
+        },
+
+        {
+            'term': 'What tag do you use to make a bulleted list?',
+            'definition': 'A ul tag',
+            'set_id': 15
+        },
+        {
+            'term': 'What is the correct HTML for making a text input field?',
+            'definition': '<input type = "text",
+            'set_id': 15
+        },
+
+
         {
             'term': 'SQL expression language',
             'definition': 'Allows SQL statements to be written using python expressions',
