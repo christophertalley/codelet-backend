@@ -70,4 +70,4 @@ def delete_card(card_id):
         db.session.commit()
         return 'Deleted', 204
     else:
-        return 401
+        return 'Authorization denied', 401
