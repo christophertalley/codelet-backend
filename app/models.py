@@ -1,5 +1,6 @@
-from flask_sqlalchemy import SQLAlchemy
 from app.search import add_to_index, remove_from_index, query_index
+from flask_sqlalchemy import SQLAlchemy
+
 
 db = SQLAlchemy()
 
@@ -45,7 +46,6 @@ class SearchableMixin(object):
 
 db.event.listen(db.session, 'before_commit', SearchableMixin.before_commit)
 db.event.listen(db.session, 'after_commit', SearchableMixin.after_commit)
-
 
 favorites_table = db.Table('favorites', db.Model.metadata,
     db.Column("set_id", db.Integer, db.ForeignKey('sets.id'), nullable=False),  # noqa

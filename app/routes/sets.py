@@ -19,7 +19,6 @@ def handle_auth_error(ex):
 # Return all sets
 @bp.route('')
 def sets():
-    Set.reindex()
     sets = Set.query.all()
     return jsonify([set.to_dict() for set in sets])
 
@@ -69,7 +68,6 @@ def create_set():
 @bp.route('/search')
 @cross_origin(headers=["Content-Type", "Authorization"])
 def search():
-    Set.reindex()
     search_term = request.args.get('search_term')
     query, total = Set.search(search_term, 1, 5)
     sets = query.all()
