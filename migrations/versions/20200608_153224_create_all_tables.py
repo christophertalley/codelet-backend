@@ -1204,6 +1204,294 @@ def upgrade():
             'definition': '0, 0n, null, undefined, false, NaN, ""',
             'set_id': 7
         },
+        {
+            'term': 'Singly Linked List Node',
+            'definition': '''Represents a single item in a linked list. Contains a value and a 
+                    reference to the next node.''',
+            'set_id': 3
+        },
+        {
+            'term': 'Head',
+            'definition': '''Part of a linked list that points to the first node 
+                if that list isn't empty.''',
+            'set_id': 3
+        },
+        {
+            'term': 'Empty List',
+            'definition': '''An empty list will have no nodes so can be checked by checking 
+                    the node count. Note that Head and Tail should also be null as 
+                    there are no nodes to point to.''',
+            'set_id': 3
+        },
+        {
+            'term': 'Cheap Linked List Operations',
+            'definition': '''It is common to AddToHead, AddToTail, RemoveFromHead 
+                    (all O(1)) and Enumerate (which can be used to Find) which is O(n). 
+                    Note that RemoveFromTail is O(1) if used on a doubly linked list.''',
+            'set_id': 3
+        },
+        {
+            'term': 'Expensive Linked List Operations',
+            'definition': '''It is often possible to perform more expensive operations O(n) 
+                    on a linked list such as RemoveItem(value), RemoveFromTail and 
+                    Contains(value). Note that RemoveFromTail is O(1) if used on a 
+                    doubly linked list.''',
+            'set_id': 3
+        },
+        {
+            'term': 'List.AddToHead algorithm',
+            'definition': '''With the new node, assigns 'Next' to point to the current 
+                    head of the list if it exists, otherwise set it to null. Assign 
+                    the list head to reference the new node. If the list is empty, 
+                    assign the tail to new node. Increment the node count. O(1)''',
+            'set_id': 3
+        },
+        {
+            'term': 'List.RemoveFromHead algorithm',
+            'definition': '''If the list isn't empty, assign the head pointer to its 
+                    node->next pointer (so it points to the next node or null). 
+                    Decrement the count, if it is 0 set the tail to null. O(1)''',
+            'set_id': 3
+        },
+        {
+            'term': 'List.Enumerate algorithm',
+            'definition': '''Create a temporary 'Current' node reference, set it to the 
+                    head of the list; while ( Current != null) { Current = Current->Next; }. 
+                    This walks over every node that exists in the list.''',
+            'set_id': 3
+        },
+        {
+            'term': 'List.RemoveItem(value)',
+            'definition': '''Enumerate the list, keeping a reference to the previous node; 
+                    if the value of the current node matches the value we'd like 
+                    to remove then update the previous node->next to current->next.''',
+            'set_id': 3
+        },
+        {
+            'term': 'Orphan Node',
+            'definition': '''Used to describe a node that has been removed from a collection 
+                    and so has no references.''',
+            'set_id': 3
+        },
+        {
+            'term': 'When to use a linked list',
+            'definition': '''They are useful for stacks and queues due to their ability 
+                    to resize cheaply (depending on whether memory has to be allocated...
+                    recycling nodes would be more efficient). Lists are also quite malleable, 
+                    allowing the easy insertion of items without having to shift existing data, 
+                    this could be handy for things like merge or quick sort. "Dynamic".''',
+            'set_id': 3
+        },
+        {
+            'term': 'When not to use a linked list',
+            'definition': '''If an algorithm requires lots of lookups then an array (indexes) 
+                    or dictionary (keys) are likely to be much more efficient. If you 
+                    don't want the collection to grow or to allocate further memory 
+                    (e.g. per-node), then it might be worth considering an array or 
+                    something else with a fixed size, especially if data doesn't need 
+                    to be sorted, added or removed.''',
+            'set_id': 3
+        },
+        {
+            'term': 'What signifies the end of a linked list?',
+            'definition': 'null',
+            'set_id': 3
+        },
+        {
+            'term': 'Whitespace',
+            'definition': '''Used to structure code. This also means right space, and if 
+                    this is off, an indentation error will be displayed.''',
+            'set_id': 9
+        },
+        {
+            'term': 'Single-line Comments',
+            'definition': 'Use # to comment.',
+            'set_id': 9
+        },
+        {
+            'term': 'Multi-line Comments',
+            'definition': 'Use triple quotation marks """',
+            'set_id': 9
+        },
+        {
+            'term': 'Exponentiation',
+            'definition': 'Use **. (2**3 = 8)',
+            'set_id': 9
+        },
+        {
+            'term': 'Len()',
+            'definition': '''A type of string method used to measure the length or number 
+                    of characters in a string.''',
+            'set_id': 9
+        },
+        {
+            'term': 'Lower()',
+            'definition': 'Gets rid of all the capitalization in a string.',
+            'set_id': 9
+        },
+        {
+            'term': 'Upper()',
+            'definition': 'Makes a string completely uppercase.',
+            'set_id': 9
+        },
+        {
+            'term': 'str()',
+            'definition': 'Turns non-string into strings.',
+            'set_id': 9
+        },
+        {
+            'term': 'Print',
+            'definition': 'Command that displays code onto the console.',
+            'set_id': 9
+        },
+        {
+            'term': '=',
+            'definition': 'Used to define variables',
+            'set_id': 9
+        },
+        {
+            'term': 'fruit[:3]',
+            'definition': '''Starts at beginning of string "fruit", gives the first three 
+                    characters, up to but not including the index of 3.''',
+            'set_id': 9
+        },
+        {
+            'term': 'max()',
+            'definition': 'This returns the greatest element in a list.',
+            'set_id': 9
+        },
+        {
+            'term': 'min()',
+            'definition': 'This returns the smallest element in a list.',
+            'set_id': 9
+        },
+        {
+            'term': 'append()',
+            'definition': 'This adds a new value to the end of a list.',
+            'set_id': 9
+        },
+        {
+            'term': 'Sum',
+            'definition': 'Returns the sum of the numeric values in a given column',
+            'set_id': 10
+        },
+        {
+            'term': 'Max',
+            'definition': 'Returns the largest value in a given column',
+            'set_id': 10
+        },
+        {
+            'term': 'Min',
+            'definition': 'Returns the smallest value in a given column.',
+            'set_id': 10
+        },
+        {
+            'term': 'Avg',
+            'definition': 'Returns the average value of a given column',
+            'set_id': 10
+        },
+        {
+            'term': 'Count',
+            'definition': 'Returns the total number of values in a given column',
+            'set_id': 10
+        },
+        {
+            'term': 'Count (*)',
+            'definition': 'Returns the number of rows in a table',
+            'set_id': 10
+        },
+        {
+            'term': 'Column',
+            'definition': '''Database tables are made of different columns (fields) 
+                    corresponding to the attributes of the object described by 
+                    the table.''',
+            'set_id': 10
+        },
+        {
+            'term': 'CREATE TABLE',
+            'definition': 'Used to create a new table',
+            'set_id': 10
+        },
+        {
+            'term': 'Insert',
+            'definition': 'Command used to add a new record to a table within a database',
+            'set_id': 10
+        },
+        {
+            'term': 'ORDER BY',
+            'definition': '''Clause used to sort the data in ascending or descending order, 
+                    based on one or more columns''',
+            'set_id': 10
+        },
+        {
+            'term': 'PRIMARY KEY',
+            'definition': '''Constraint that uniquely identifies each record in a database 
+                    table; must contain unique values; should be included in most 
+                    tables''',
+            'set_id': 10
+        },
+        {
+            'term': 'Query',
+            'definition': '''The main way to make a request for information from a database; 
+                    consist of questions presented to the database in a predefined format.''',
+            'set_id': 10
+        },
+        {
+            'term': 'How does React connect with Browser DOM elements?',
+            'definition': '''React uses objects called "React elements" to represent the HTML 
+                    elements of the DOM. Developers can also create custom elements called 
+                    "Components" to represent the larger parts of the UI.''',
+            'set_id': 13
+        },
+        {
+            'term': 'JSX',
+            'definition': '''This is an HTML-like syntax extension for JavaScript written 
+                    to be used with React. This is specifically how React adds XML 
+                    syntax to JavaScript which is compiled to JavaScript at runtime.''',
+            'set_id': 13
+        },
+        {
+            'term': 'JSX element',
+            'definition': '''A basic unit of JSX found in a JavaScript file which is treated 
+                    as, and has the functionality of, a JavaScript expression. 
+                    It can also have attributes, just like HTML elements.''',
+            'set_id': 13
+        },
+        {
+            'term': 'A component changes its state by calling the function',
+            'definition': 'this.setState( { someKey: newValue} )',
+            'set_id': 13
+        },
+        {
+            'term': 'The compiler transforms every JSX element into this method',
+            'definition': 'React.createElement()',
+            'set_id': 13
+        },
+        {
+            'term': 'Components',
+            'definition': 'React applications are made out of these.',
+            'set_id': 13
+        },
+        {
+            'term': 'Two ways for a component to get dynamic information:',
+            'definition': 'props and state',
+            'set_id': 13
+        },
+        {
+            'term': 'How do you pass a prop?',
+            'definition': 'By giving an attribute to a component instance',
+            'set_id': 13
+        },
+        {
+            'term': 'State',
+            'definition': 'Data in our application that can change',
+            'set_id': 13
+        },
+        {
+            'term': 'Props',
+            'definition': 'Information that gets passed from one component to another',
+            'set_id': 13
+        },
     ])
 # ### end Alembic commands ###
 
