@@ -43,7 +43,7 @@ def updateUser():
         db.session.add(new_user)
         db.session.commit()
 
-        return new_user, 201
+        return 'user created', 201
 
 
 @bp.route('/sets')
