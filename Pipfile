@@ -18,6 +18,7 @@ flask-migrate = "*"
 psycopg2-binary = "*"
 requests = "*"
 elasticsearch = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
