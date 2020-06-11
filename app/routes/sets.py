@@ -65,7 +65,7 @@ def create_set():
 
 
 # search sets
-@bp.route('/search')
+@bp.route('/search/')
 @cross_origin(headers=["Content-Type", "Authorization"])
 def search():
     search_term = request.args.get('search_term')
