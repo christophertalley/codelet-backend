@@ -68,6 +68,7 @@ def create_set():
 @bp.route('/search/')
 @cross_origin(headers=["Content-Type", "Authorization"])
 def search():
+    Set.reindex()
     search_term = request.args.get('search_term')
     query, total = Set.search(search_term, 1, 5)
     sets = query.all()
