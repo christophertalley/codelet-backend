@@ -130,8 +130,9 @@ class Set(SearchableMixin, db.Model):
         }
 
 
-class Card(db.Model):
+class Card(SearchableMixin, db.Model):
     __tablename__ = 'cards'
+    __searchable__ = ['term', 'definition']
 
     id = db.Column(db.Integer, primary_key=True)
     term = db.Column(db.String(100), nullable=False)

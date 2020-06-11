@@ -69,7 +69,25 @@ def create_set():
 @cross_origin(headers=["Content-Type", "Authorization"])
 def search():
     Set.reindex()
+    Card.reindex()
     search_term = request.args.get('search_term')
-    query, total = Set.search(search_term, 1, 5)
-    sets = query.all()
-    return jsonify([set.to_dict() for set in sets])
+    sets_query, sets_total = Set.search(search_term, 1, 10)
+    cards_query, cards_total = Card.search(search_term, 1, 10)
+    sets = sets_query.all()
+    cards = cards_query.all()
+    print(cards)
+    return {
+        'sets': [set.to_dict() for set in sets],
+        'cards': [card.to_dict() for card in cards]
+    }
+
+
+# search cards
+# @bp.route('/search/')
+# @cross_origin(headers=["Content-Type", "Authorization"])
+# def search():
+#     Set.reindex()
+#     search_term = request.args.get('search_term')
+#     query, total = Set.search(search_term, 1, 10)
+#     sets = query.all()
+#     return jsonify([set.to_dict() for set in sets])
