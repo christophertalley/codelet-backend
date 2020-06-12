@@ -62,7 +62,7 @@ def update_card(card_id):
             card.term = data['term']
 
         db.session.commit()
-        return "card updated", 201
+        return card.to_dict(), 201
 
 
 # Delete a card
