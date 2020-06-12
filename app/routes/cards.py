@@ -58,11 +58,11 @@ def update_card(card_id):
         data = request.json
         if data.get('definition'):
             card.definition = data['definition']
-        elif data.get('term'):
+        if data.get('term'):
             card.term = data['term']
 
         db.session.commit()
-        return "card updated", 201
+        return card.to_dict(), 201
 
 
 # Delete a card
