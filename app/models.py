@@ -93,6 +93,13 @@ class Category(db.Model):
             'name': self.name
         }
 
+    def to_dict_sets(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'sets': [set.to_dict() for set in self.sets]
+        }
+
 
 class Set(SearchableMixin, db.Model):
     __tablename__ = 'sets'

@@ -21,6 +21,15 @@ def categories():
     return jsonify([category.to_dict() for category in categories])
 
 
+# returns all sets in a category
+@bp.route('/<int:category_id>/sets')
+@cross_origin(headers=["Content-Type", "Authorization"])
+def category_sets(category_id):
+    category_info = Category.query.options(
+        db.joinedload('sets')).get(category_id)
+    return category_info.to_dict_sets(), 200
+
+
 # Return single category by its id
 @bp.route('/<int:category_id>')
 @cross_origin(headers=["Content-Type", "Authorization"])
@@ -29,7 +38,7 @@ def category(category_id):  # returns cat info @category_id
     return category.to_dict(), 200
 
 
-# Create a new card
+# Create a new category
 @bp.route('', methods=['POST'])
 @cross_origin(headers=["Content-Type", "Authorization"])
 @requires_auth

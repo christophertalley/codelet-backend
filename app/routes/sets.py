@@ -71,7 +71,7 @@ def search():
     Set.reindex()
     Card.reindex()
     search_term = request.args.get('search_term')
-    sets_query, sets_total = Set.search(search_term, 1, 10)
+    sets_query, sets_total = Set.search(search_term, 1, 5)
     cards_query, cards_total = Card.search(search_term, 1, 10)
     sets = sets_query.all()
     cards = cards_query.all()
