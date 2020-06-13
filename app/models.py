@@ -120,6 +120,10 @@ class Set(SearchableMixin, db.Model):
     favorites = db.relationship('User', secondary=favorites_table)
 
     def to_dict(self):
+        num_upvotes = 0
+        for vote in self.votes:
+            if vote.is_upvote is True:
+                num_upvotes += 1
         return {
             'id': self.id,
             'title': self.title,
@@ -133,7 +137,8 @@ class Set(SearchableMixin, db.Model):
             # returns votes info list from votes relationship
             'votes': [vote.to_dict() for vote in self.votes],
             # returns favorites info list
-            'favorites': [favorite.to_dict_favorites() for favorite in self.favorites]
+            'favorites': [favorite.to_dict_favorites() for favorite in self.favorites],
+            'num_upvotes': num_upvotes
         }
 
 
