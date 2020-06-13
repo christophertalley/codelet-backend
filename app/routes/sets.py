@@ -104,6 +104,9 @@ def update_set(set_id):
 
         db.session.commit()
         return set.to_dict(), 201
+    else:
+        return "Authorization denied", 401
+
 
 
 
