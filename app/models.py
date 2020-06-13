@@ -115,7 +115,7 @@ class Set(SearchableMixin, db.Model):
 
     user = db.relationship('User', back_populates='sets')
     category = db.relationship('Category', back_populates='sets')
-    cards = db.relationship('Card', back_populates='set')
+    cards = db.relationship('Card', back_populates='set', cascade = "delete")
     votes = db.relationship('Vote', back_populates='set')
     favorites = db.relationship('User', secondary=favorites_table)
 
