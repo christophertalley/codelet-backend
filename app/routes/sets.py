@@ -82,6 +82,34 @@ def search():
     }
 
 
+#delete a set
+@bp.route('/<int:set_id>', methods=['DELETE'])
+@cross_origin(headers=["Content-Type", "Authorization"])
+@requires_auth
+def delete_set(set_id):
+
+    token = request.headers.get('Authorization')
+    req = requests.get('https://codelet-app.auth0.com/userinfo',
+                       headers={'Authorization': token}).content
+
+    userInfo = json.loads(req)
+    userId = User.query.filter_by(email=userInfo['email']).first().id
+    set = Set.query.get(set_id)
+    set_user = set.user_id
+    if userId == set_user:
+        db.session.delete(set)
+        db.session.commit()
+        return "Set has been deleted", 204
+    else:
+        return "Authorization denied", 401
+
+
+
+
+
+
+
+
 # search cards
 # @bp.route('/search/')
 # @cross_origin(headers=["Content-Type", "Authorization"])
