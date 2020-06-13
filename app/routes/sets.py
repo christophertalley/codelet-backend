@@ -82,6 +82,35 @@ def search():
     }
 
 
+#update a set
+@bp.route('/<int:set_id>', methods=['PATCH'])
+@cross_origin(headers=["Content-Type", "Authorization"])
+@requires_auth
+def update_set(set_id):
+
+    token = request.headers.get('Authorization')
+    req = requests.get('https://codelet-app.auth0.com/userinfo',
+                       headers={'Authorization': token}).content
+    userInfo = json.loads(req)
+    userId = User.query.filter_by(email=userInfo['email']).first().id
+    set = Set.query.get(set_id)
+    set_user = set.user_id
+    if userId == set_user:
+        data = request.json
+        if data.get('title'):
+            set.title = data['title']
+        if data.get('description'):
+            set.description = data['description']
+
+        db.session.commit()
+        return set.to_dict(), 201
+
+
+
+
+
+
+
 #delete a set
 @bp.route('/<int:set_id>', methods=['DELETE'])
 @cross_origin(headers=["Content-Type", "Authorization"])
