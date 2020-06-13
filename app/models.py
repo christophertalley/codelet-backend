@@ -124,6 +124,8 @@ class Set(SearchableMixin, db.Model):
         for vote in self.votes:
             if vote.is_upvote is True:
                 num_upvotes += 1
+            else:
+                num_upvotes -= 1
         return {
             'id': self.id,
             'title': self.title,
