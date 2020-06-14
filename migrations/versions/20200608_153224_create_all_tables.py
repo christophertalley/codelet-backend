@@ -304,7 +304,7 @@ def upgrade():
             'set_id': 2
         },
         {
-            'term': 'the four basic graph types are',
+            'term': 'the four basic graph types are?',
             'definition': '''1. undirected and unweighted,
                 2. undirected and weighted,
                 3. directed and unweighted,
@@ -313,17 +313,17 @@ def upgrade():
             'set_id': 2
         },
         {
-            'term': 'What is adjacency',
+            'term': 'What is adjacency?',
             'definition': 'the basic connectedness property of vertices',
             'set_id': 2
         },
         {
-            'term': 'WHat kind of graphs have a symmetric matrix',
+            'term': 'WHat kind of graphs have a symmetric matrix?',
             'definition': 'Undirected graphs',
             'set_id': 2
         },
         {
-            'term': 'When is an index null in a directed list',
+            'term': 'When is an index null in a directed list?',
             'definition': 'When the index does not point to anything',
             'set_id': 2
         },
@@ -348,7 +348,7 @@ def upgrade():
             'set_id': 2
         },
         {
-            'term': 'What is a cycle in a graph',
+            'term': 'What is a cycle in a graph?',
             'definition': 'It is a simple path that starts and ends at the same vertex',
             'set_id': 2
         },
@@ -358,17 +358,17 @@ def upgrade():
             'set_id': 2
         },
         {
-            'term': 'What is a variable',
+            'term': 'What is a variable?',
             'definition': 'Container for a piece of data',
             'set_id': 6
         },
         {
-            'term': 'Are variables case sensitive',
+            'term': 'Are variables case sensitive?',
             'definition': 'Yes',
             'set_id': 6
         },
         {
-            'term': 'What will an undeclared variable return',
+            'term': 'What will an undeclared variable return?',
             'definition': 'Undefined',
             'set_id': 6,
         },
@@ -388,7 +388,7 @@ def upgrade():
             'set_id': 6,
         },
         {
-            'term': 'What is variable hoisting',
+            'term': 'What is variable hoisting?',
             'definition': 'Variables are hoisted to the top of the function/statement',
             'set_id': 6
         },
@@ -485,7 +485,7 @@ def upgrade():
             'set_id': 11
         },
         {
-            'term': 'What does HTML stand for',
+            'term': 'What does HTML stand for?',
             'definition': 'hyper text markup language',
             'set_id': 15
         },
@@ -495,7 +495,7 @@ def upgrade():
             'set_id':  15
         },
         {
-            'term': 'Diff between padding and margin',
+            'term': 'What is the difference between padding and margin?',
             'definition': 'Padding is on the inside and margin is on the outside',
             'set_id': 15
         },
@@ -510,7 +510,7 @@ def upgrade():
             'set_id': 15
         },
         {
-            'term': 'What is 10vw',
+            'term': 'What is 10vw?',
             'definition': '10% of the view port with',
             'set_id': 15
         },
@@ -558,7 +558,7 @@ def upgrade():
             'set_id': 12
         },
         {
-            'term': 'What is table.columns.keys',
+            'term': 'What is table.columns.keys?',
             'definition': 'Is similar to an associative array of all the columns of a table',
             'set_id': 12
         },
@@ -850,18 +850,18 @@ def upgrade():
             'set_id': 8
         },
         {
-            'term': 'strings',
+            'term': 'Strings',
             'definition': 'A string literal, or string, holds any combination of letters and numbers you would like it to hold. Any number it holds, however, is not treated like a numerical value but is preserved as if it were a word.',
             'set_id': 8
         },
         {
-            'term': 'integers',
+            'term': 'Integers',
             'definition': 'An integer in Python, also known as a \'numeric literal\', is simply a name used for a numeric value. For this reason, these values are commonly called integers even if they are assigned the value of a real number in the form of an integer and a decimal value.',
             'set_id': 8
         },
 
         {
-            'term': 'floating point number',
+            'term': 'Floating Point Number',
             'definition': '''A real number (that is, a number that can contain a fractional part).
 
                 To convert a number into floating point:
@@ -882,7 +882,7 @@ def upgrade():
             'set_id': 8
         },
         {
-            'term': 'tuple',
+            'term': 'Tuple',
             'definition': '''It can be thought of as read-only lists. One can index, slice and concatenate, but one cannot append or alter the values of the tuple after it has been initialized.
                                 directions=('north', 'south', 'east', 'west')
                             ''',
@@ -890,7 +890,7 @@ def upgrade():
         },
 
         {
-            'term': 'dictionary',
+            'term': 'Dctionary',
             'definition': '''
                      Python term for an associative array. An array is, like a list, a series of values in two dimensions. An associative array gives one a way of accessing the values by a key, a term associated with the value instead of an item's index number.
 
@@ -922,7 +922,7 @@ def upgrade():
             'set_id': 8
         },
         {
-            'term': 'long number',
+            'term': 'Long Number',
             'definition': '''
         They have unlimited precision.
 
@@ -1024,17 +1024,17 @@ def upgrade():
             'set_id': 14
         },
         {
-            'term': 'Flask is a',
+            'term': 'Flask is a?',
             'definition': 'micro framework for Python web development',
             'set_id': 16
         },
         {
-            'term': 'Flask is a micro framework because',
+            'term': 'Flask is a micro framework because?',
             'definition': 'it implements only core functionality (including routing) but leaves more advanced functionality (including authentication and database ORMs) to extensions',
             'set_id': 16
         },
         {
-            'term': 'app = Flask(__name__)',
+            'term': 'What does app = Flask(__name__)?',
             'definition': '''
             creates an instance of the Flask object using our module's name as a parameter''',
             'set_id': 16
@@ -1330,7 +1330,7 @@ def upgrade():
             'set_id': 3
         },
         {
-            'term': 'When not to use a linked list',
+            'term': 'When not to use a linked list?',
             'definition': '''If an algorithm requires lots of lookups then an array (indexes)
                     or dictionary (keys) are likely to be much more efficient. If you
                     don't want the collection to grow or to allocate further memory
@@ -1387,7 +1387,7 @@ def upgrade():
             'set_id': 9
         },
         {
-            'term': 'Print',
+            'term': 'Print() statement',
             'definition': 'Command that displays code onto the console.',
             'set_id': 9
         },
@@ -1505,12 +1505,12 @@ def upgrade():
             'set_id': 13
         },
         {
-            'term': 'A component changes its state by calling the function',
+            'term': 'A component changes its state by calling what function?',
             'definition': 'this.setState( { someKey: newValue} )',
             'set_id': 13
         },
         {
-            'term': 'The compiler transforms every JSX element into this method',
+            'term': 'The compiler transforms every JSX element into this method?',
             'definition': 'React.createElement()',
             'set_id': 13
         },
@@ -1554,17 +1554,17 @@ def upgrade():
             'set_id': 18
         },
         {
-            'term': 'Explain "a single source of truth"',
+            'term': 'Explain "a single source of truth"?',
             'definition': 'The state for the entire redux app is stored in a single pojo',
             'set_id': 18
         },
         {
-            'term': 'Explain "State is read only"',
+            'term': 'Explain "State is read only"?',
             'definition': 'State object cannot directly be modified; it can only be modified bt dispatching actions',
             'set_id': 18
         },
         {
-            'term': 'Explain "Changes are made using pure functions"',
+            'term': 'Explain "Changes are made using pure functions"?',
             'definition': 'pure functions are the reducers, which receive and update the old state and the action',
             'set_id': 18
         },
@@ -1692,7 +1692,7 @@ def upgrade():
             'set_id': 19
         },
         {
-            'term': 'Two important built in javascript JSON object methods',
+            'term': 'Two important built in javascript JSON object methods?',
             'definition': '''
                 1. JSON.stringify(value) = turns the passed value into a string
                 2. JSON.parse(str) = turns a JSON formatted string into a javascript object
@@ -1750,12 +1750,12 @@ def upgrade():
             'set_id': 20
         },
         {
-            'term': 'What can you use to replace .then',
+            'term': 'What can you use to replace .then?',
             'definition': 'Using async-await',
             'set_id': 20
         },
         {
-            'term': 'What happens when you declare a function as async',
+            'term': 'What happens when you declare a function as async?',
             'definition': 'Causes the function to return an implicit promise containing the result',
             'set_id': 20
         },
@@ -1782,12 +1782,12 @@ def upgrade():
             'set_id': 21
         },
         {
-            'term': 'Mocha ',
+            'term': 'What is Mocha?',
             'definition': 'A javascript testing framework that runs tests AND shows them in a nice, user friendly way',
             'set_id': 21
         },
         {
-            'term': '3 levels of the testing pyramid ',
+            'term': '3 levels of the testing pyramid',
             'definition': '1. Unit Tests 2. Integration Tests 3. End to End Tests (E2E)',
             'set_id': 21
         },
