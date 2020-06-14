@@ -241,10 +241,39 @@ def upgrade():
         {
             'title': 'Node',  # 17 Chris
             'description': 'Learn about Node.js!',
+            'category_id': '6',
+            'user_id': 1,
+            'created_at': datetime.now()
+        },
+        {
+            'title': 'Redux',  # 18 lizzie
+            'description': 'Learn all about the wonders of Redux and how it will rock your world',
             'category_id': '7',
             'user_id': 1,
             'created_at': datetime.now()
         },
+         {
+            'title': 'Web Storage',  # 19 lizzie
+            'description': 'cookies for life',
+            'category_id': '6',
+            'user_id': 1,
+            'created_at': datetime.now()
+        },
+        {
+            'title': 'Promises',  # 20 lizzie
+            'description': 'never make a promise you cant keep...',
+            'category_id': '3',
+            'user_id': 1,
+            'created_at': datetime.now()
+        },
+        {
+            'title': 'Unit Testing',  # 21 lizzie
+            'description': 'Enjoy JS unit testing bec in python it is an eyesore ',
+            'category_id': '3',
+            'user_id': 1,
+            'created_at': datetime.now()
+        },
+
     ])
 
     op.bulk_insert(cards_table, [
@@ -1493,7 +1522,253 @@ def upgrade():
             'definition': 'Information that gets passed from one component to another',
             'set_id': 13
         },
+        {
+            'term': 'Is redux predictable?',
+            'definition': 'Yes. Interacting with the data in the store repeatedly will produce the same effect',
+            'set_id': 18
+        },
+        {
+            'term': '3 main principles of redux',
+            'definition': ''' 
+            1. A single source of truth
+            2. State is read only
+            3. Changes are made with pure functions
+            ''',
+            'set_id': 18
+        },
+        {
+            'term': 'Explain "a single source of truth"',
+            'definition': 'The state for the entire redux app is stored in a single pojo',
+            'set_id': 18
+        },
+        {
+            'term': 'Explain "State is read only"',
+            'definition': 'State object cannot directly be modified; it can only be modified bt dispatching actions',
+            'set_id': 18
+        },
+        {
+            'term': 'Explain "Changes are made using pure functions"',
+            'definition': 'pure functions are the reducers, which receive and update the old state and the action',
+            'set_id': 18
+        },
+        {
+            'term': 'Briefly explain state',
+            'definition': 'The state of a program refers to akk the info stored by that program at a specific point in time, generally data',
+            'set_id': 18
+        },
+        {
+            'term': 'Briefly explain what a store is',
+            'definition': 'A single POJO with a few other methods, including getState, dispatch(action) and subscribe(listener)',
+            'set_id': 18
+        },
+        {
+            'term': 'Action',
+            'definition': 'A action is a POJO that has a type property, and contains info that can be used to update the store, ie dispatched',
+            'set_id': 18
+        },
+        {
+            'term': 'Pure Function',
+            'definition': 'A function is considered pure if it its behavior does not rely on anythng other than taking in arguments and returning a value',
+            'set_id': 18
+        },
+        {
+            'term': 'Reducer',
+            'definition': 'Function that is called every time an action is dispatched. It receives an action plus the current state as the arguments, returns the updated state',
+            'set_id': 18
+        },
+        {
+            'term': 'Are reducers required to be pure functions?',
+            'definition': 'Yes. Reducers in redux must be pure functions of the dispatched action and the current state.',
+            'set_id': 18
+        },
+        {
+            'term': 'Middleware',
+            'definition': 'This is an optional component of redux that allows custom responses to dispatched actions',
+            'set_id': 18
+        },
+        {
+            'term': 'Thunks',
+            'definition': 'An alternative to middleware, they essentially act as a function that calls another function',
+            'set_id': 18
+        },
+        {
+            'term': 'WHat is Flux?',
+            'definition': 'A front end app architecture from FB that provides unidirectional flow; a pattern you use to structure the app',
+            'set_id': 18
+        },
+        {
+            'term': 'What are the 3 main things a redux store is responsible for?',
+            'definition': '''
+                1. Using a reducer to update an app's state
+                2. Using subscription to broadcast an app's state
+                3. Actions - using them to tell it how and when it needs to change the global
+                     state of the application
+            ''',
+            'set_id': 18
+        },
+        {
+            'term': 'What are the 3 main store methods?',
+            'definition': '''
+                1. getState() = returns the current state of a store
+                2. dispatch(action) = passes an action into the reducer that tells it what info it must update
+                3. subscribe(callback) = registers cbs to go off whenever the store updates. It returns a function that when 
+                    invoked, it unsubscribes the cb from the store
+            ''',
+            'set_id': 18
+        },
+        {
+            'term': 'What 3 steps does a reducer perform?',
+            'definition': '''
+                1. It receives the current state plus an action
+                2. It then updates the state based on the action.type
+                3. finally, it returns the next state
+            ''',
+            'set_id': 18
+        },
+        {
+            'term': 'Briefly desccribe cookies',
+            'definition': '''
+                A really small file stored on the user's computer, a cookie holds a small amount of data.
+                Its included in HTTP requests - the server sends the data to the browser
+                where it gets stored, and its sent back to the server with the next request
+            ''',
+            'set_id': 19
+        },
+        {
+            'term': 'What are a few things a cookie can store?',
+            'definition': '''
+                To store stateful information about a user:
+                    examples:
+                        a. browser history
+                        b. form input information they filled out
+                        c. storing a session cookie / user login/validation
+                        d. persistant cookies can have an expiration date
+            ''',
+            'set_id': 19
+        },
+        {
+            'term': 'Web Storage API',
+            'definition': ' Local Storage & Session Storage',
+            'set_id': 19
+        },
+        {
+            'term': 'Session Storage',
+            'definition': '''
+                1. Stores data for only one session or  until the browser or a tab is closed.
+                2. NEVER transfers data to the server
+                3. The storage limit is significantly larger than a cookie (5mb)
+            ''',
+            'set_id': 19
+        },
+        {
+            'term': 'Local Storage',
+            'definition': '''
+                1. Stores the data with no expiry date
+                2. Deleted when the browser cache is cleared
+                3. Has a max storage limit in the browser
+            ''',
+            'set_id': 19
+        },
+        {
+            'term': 'What is JSON',
+            'definition': 'A format - it is just a string of text',
+            'set_id': 19
+        },
+        {
+            'term': 'Two important built in javascript JSON object methods',
+            'definition': '''
+                1. JSON.stringify(value) = turns the passed value into a string
+                2. JSON.parse(str) = turns a JSON formatted string into a javascript object
+            ''',
+            'set_id': 19
+        },
+        {
+            'term': 'Which method will serialize a JS value into a JSON string?',
+            'definition': 'JSON.stringify()',
+            'set_id': 19
+        },
+        {
+            'term': 'Define serialize',
+            'definition': 'To serialize means to convert data into a format that can be sent to another computer',
+            'set_id': 19
+        },
+        {
+            'term': 'Define deserialize',
+            'definition': 'Converting a message from another computer into useable data ',
+            'set_id': 19
+        },
+        {
+            'term': 'Promise',
+            'definition': 'A promise that at some future point, your code will get a value from an operation so you dont get an error',
+            'set_id': 20
+        },
+        {
+            'term': 'Three Existing States of a Promise',
+            'definition': 'Pending, Fulfilled, Rejected',
+            'set_id': 20
+        },
+        {
+            'term': 'Pending Promise',
+            'definition': 'The promise object hasnt been resolved. Once it does, it becomes either fullfilled or rejected',
+            'set_id': 20
+        },
+        {
+            'term': 'Fullfilled Promise',
+            'definition': 'Whatever was pending had succeeded - the success handler is called and now the promise cant transition to another state or change its value',
+            'set_id': 20
+        },
+        {
+            'term': 'Rejected Promise',
+            'definition': 'The operation the pending promise was sup to do failed, and now your error handler is called. The promise cant transition state, nor error reason ',
+            'set_id': 20
+        },
+        {
+            'term': 'Success Handler ',
+            'definition': 'A function with one param, which is the value the fullfilled promise has',
+            'set_id': 20
+        },
+        {
+            'term': 'Error Handler',
+            'definition': 'A function with one param, which is the reason that the promise failed',
+            'set_id': 20
+        },
+        {
+            'term': 'What can you use to replace .then',
+            'definition': 'Using async-await',
+            'set_id': 20
+        },
+        {
+            'term': 'What happens when you declare a function as async',
+            'definition': 'Causes the function to return an implicit promise containing the result',
+            'set_id': 20
+        },
+        {
+            'term': 'What does "await" do?',
+            'definition': 'Used to wait for a promise to be fullfilled and can ONLY be used inside an async function',
+            'set_id': 20
+        },
+        {
+            'term': 'Does async/await code look synchronous?',
+            'definition': 'Yes! You also dont have to chain .then everywhere and look super messy. Async await is the BOMB',
+            'set_id': 20
+        },
+        {
+            'term': 'What kind of error handling does async.await use?',
+            'definition': 'Try / Catch blocks',
+            'set_id': 20
+        },
+        {
+            'term': 'Thunks',
+            'definition': 'An alternative to middleware, they essentially act as a function that calls another function',
+            'set_id': 21
+        },
+        {
+            'term': 'Thunks',
+            'definition': 'An alternative to middleware, they essentially act as a function that calls another function',
+            'set_id': 21
+        },
     ])
+
 # ### end Alembic commands ###
 
 
