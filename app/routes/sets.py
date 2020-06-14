@@ -110,10 +110,6 @@ def update_set(set_id):
 
 
 
-
-
-
-
 #delete a set
 @bp.route('/<int:set_id>', methods=['DELETE'])
 @cross_origin(headers=["Content-Type", "Authorization"])
