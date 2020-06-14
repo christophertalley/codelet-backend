@@ -1850,48 +1850,48 @@ def upgrade():
 
     op.bulk_insert(votes_table, [
         {
-            'set_id': 18  # redux
-            'user_id': 1
+            'set_id': 18,  # redux
+            'user_id': 1,
             'is_upvote': False
         },
         {
-            'set_id': 18  # redux
-            'user_id': 2
+            'set_id': 18,  # redux
+            'user_id': 2,
             'is_upvote': False
         },
         {
-            'set_id': 18  # redux
-            'user_id': 3
+            'set_id': 18,  # redux
+            'user_id': 3,
             'is_upvote': False
         },
         {
-            'set_id': 18  # redux
-            'user_id': 4
+            'set_id': 18,  # redux
+            'user_id': 4,
             'is_upvote': False
         },
         {
-            'set_id': 5  # redux
-            'user_id': 4
+            'set_id': 5,  # redux
+            'user_id': 4,
             'is_upvote': True
         },
         {
-            'set_id': 5  # redux
-            'user_id': 3
+            'set_id': 5,  # redux
+            'user_id': 3,
             'is_upvote': True
         },
         {
-            'set_id': 5  # redux
-            'user_id': 2
+            'set_id': 5,  # redux
+            'user_id': 2,
             'is_upvote': True
         },
         {
-            'set_id': 5  # redux
-            'user_id': 1
+            'set_id': 5,  # redux
+            'user_id': 1,
             'is_upvote': True
         },
         {
-            'set_id': 1  # redux
-            'user_id': 2
+            'set_id': 1,  # redux
+            'user_id': 2,
             'is_upvote': True
         },
 
