@@ -103,12 +103,28 @@ def upgrade():
     # Add seeder for users table
     op.bulk_insert(users_table, [
         {
-            "nickname": 'codelet app',
+            "nickname": 'Codelet App',
             "email": "codelet.app@gmail.com"
         },
         {
-            "nickname": 'John Smith',
-            "email": "js@js.com"
+            "nickname": 'Demo User',
+            "email": "demo@demo.com"
+        },
+        {
+            "nickname": 'Brandon Tsui',
+            "email": "brandon@brandon.com"
+        },
+        {
+            "nickname": 'Lisa Kang',
+            "email": "lisa@lisa.com"
+        },
+        {
+            "nickname": 'Chris  Talley',
+            "email": "chris@chris.com"
+        },
+        {
+            "nickname": 'Lizzie Friedman',
+            "email": "lizzie@lizzie.com.com"
         }
     ])
 
@@ -148,42 +164,42 @@ def upgrade():
             'created_at': datetime.now()
         },
         {
-            'title': 'Concepts',  # 4 Chris
+            'title': 'Algorithm Concepts',  # 4 Chris
             'description': 'Study some algorithm concepts.',
             'category_id': 2,
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'Sorting',  # 5 Brandon √
+            'title': 'Sorting Algorithms',  # 5 Brandon √
             'description': 'Learn about different sorting mechanisms.',
             'category_id': 2,
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'Datatypes',  # 6 Lizzie
+            'title': 'Javascript Datatypes',  # 6 Lizzie
             'description': 'Study various Javascript datatypes!',
             'category_id': 3,
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'Syntax',  # 7 Brandon
+            'title': 'Javascript Syntax',  # 7 Brandon
             'description': 'Brush up on some Javascript syntax.',
             'category_id': 3,
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'Datatypes',  # 8 Chris
+            'title': 'Python Datatypes',  # 8 Chris
             'description': 'Need a refresher on python datatypes? Start here!',
             'category_id': 4,
             'user_id': 1,
             'created_at': datetime.now()
         },
         {
-            'title': 'Syntax',  # 9 Lisa
+            'title': 'Python Syntax',  # 9 Lisa
             'description': 'No semi-colons here! Learn some python syntax!',
             'category_id': 4,
             'user_id': 1,
@@ -252,7 +268,7 @@ def upgrade():
             'user_id': 1,
             'created_at': datetime.now()
         },
-         {
+        {
             'title': 'Web Storage',  # 19 lizzie
             'description': 'cookies for life',
             'category_id': '6',
@@ -947,7 +963,8 @@ def upgrade():
 
                 Inline styles - An inline style is attached directly to the element to be styled. Example: < h1 style="color: #ffffff;" > .
 
-                IDs - An ID is a unique identifier for the page elements, such as  # navbar.
+                # navbar.
+                IDs - An ID is a unique identifier for the page elements, such as
 
                 Classes, attributes and pseudo-classes - This category includes .classes, [attributes] and pseudo-classes such as:hover, :focus etc.
 
@@ -1236,89 +1253,89 @@ def upgrade():
         },
         {
             'term': 'Singly Linked List Node',
-            'definition': '''Represents a single item in a linked list. Contains a value and a 
+            'definition': '''Represents a single item in a linked list. Contains a value and a
                     reference to the next node.''',
             'set_id': 3
         },
         {
             'term': 'Head',
-            'definition': '''Part of a linked list that points to the first node 
+            'definition': '''Part of a linked list that points to the first node
                 if that list isn't empty.''',
             'set_id': 3
         },
         {
             'term': 'Empty List',
-            'definition': '''Will have no nodes so can be checked by checking 
-                    the node count. Note that Head and Tail should also be null as 
+            'definition': '''Will have no nodes so can be checked by checking
+                    the node count. Note that Head and Tail should also be null as
                     there are no nodes to point to.''',
             'set_id': 3
         },
         {
             'term': 'Cheap Linked List Operations',
-            'definition': '''It is common to AddToHead, AddToTail, RemoveFromHead 
-                    (all O(1)) and Enumerate (which can be used to Find) which is O(n). 
+            'definition': '''It is common to AddToHead, AddToTail, RemoveFromHead
+                    (all O(1)) and Enumerate (which can be used to Find) which is O(n).
                     Note that RemoveFromTail is O(1) if used on a doubly linked list.''',
             'set_id': 3
         },
         {
             'term': 'Expensive Linked List Operations',
-            'definition': '''It is often possible to perform more expensive operations O(n) 
-                    on a linked list such as RemoveItem(value), RemoveFromTail and 
-                    Contains(value). Note that RemoveFromTail is O(1) if used on a 
+            'definition': '''It is often possible to perform more expensive operations O(n)
+                    on a linked list such as RemoveItem(value), RemoveFromTail and
+                    Contains(value). Note that RemoveFromTail is O(1) if used on a
                     doubly linked list.''',
             'set_id': 3
         },
         {
             'term': 'List.AddToHead algorithm',
-            'definition': '''With the new node, assigns 'Next' to point to the current 
-                    head of the list if it exists, otherwise set it to null. Assign 
-                    the list head to reference the new node. If the list is empty, 
+            'definition': '''With the new node, assigns 'Next' to point to the current
+                    head of the list if it exists, otherwise set it to null. Assign
+                    the list head to reference the new node. If the list is empty,
                     assign the tail to new node. Increment the node count. O(1)''',
             'set_id': 3
         },
         {
             'term': 'List.RemoveFromHead algorithm',
-            'definition': '''If the list isn't empty, assign the head pointer to its 
-                    node->next pointer (so it points to the next node or null). 
+            'definition': '''If the list isn't empty, assign the head pointer to its
+                    node->next pointer (so it points to the next node or null).
                     Decrement the count, if it is 0 set the tail to null. O(1)''',
             'set_id': 3
         },
         {
             'term': 'List.Enumerate algorithm',
-            'definition': '''Create a temporary 'Current' node reference, set it to the 
-                    head of the list; while ( Current != null) { Current = Current->Next; }. 
+            'definition': '''Create a temporary 'Current' node reference, set it to the
+                    head of the list; while ( Current != null) { Current = Current->Next; }.
                     This walks over every node that exists in the list.''',
             'set_id': 3
         },
         {
             'term': 'List.RemoveItem(value)',
-            'definition': '''Enumerate the list, keeping a reference to the previous node; 
-                    if the value of the current node matches the value we'd like 
+            'definition': '''Enumerate the list, keeping a reference to the previous node;
+                    if the value of the current node matches the value we'd like
                     to remove then update the previous node->next to current->next.''',
             'set_id': 3
         },
         {
             'term': 'Orphan Node',
-            'definition': '''Used to describe a node that has been removed from a collection 
+            'definition': '''Used to describe a node that has been removed from a collection
                     and so has no references.''',
             'set_id': 3
         },
         {
             'term': 'When to use a linked list',
-            'definition': '''They are useful for stacks and queues due to their ability 
+            'definition': '''They are useful for stacks and queues due to their ability
                     to resize cheaply (depending on whether memory has to be allocated...
-                    recycling nodes would be more efficient). Lists are also quite malleable, 
-                    allowing the easy insertion of items without having to shift existing data, 
+                    recycling nodes would be more efficient). Lists are also quite malleable,
+                    allowing the easy insertion of items without having to shift existing data,
                     this could be handy for things like merge or quick sort. "Dynamic".''',
             'set_id': 3
         },
         {
             'term': 'When not to use a linked list',
-            'definition': '''If an algorithm requires lots of lookups then an array (indexes) 
-                    or dictionary (keys) are likely to be much more efficient. If you 
-                    don't want the collection to grow or to allocate further memory 
-                    (e.g. per-node), then it might be worth considering an array or 
-                    something else with a fixed size, especially if data doesn't need 
+            'definition': '''If an algorithm requires lots of lookups then an array (indexes)
+                    or dictionary (keys) are likely to be much more efficient. If you
+                    don't want the collection to grow or to allocate further memory
+                    (e.g. per-node), then it might be worth considering an array or
+                    something else with a fixed size, especially if data doesn't need
                     to be sorted, added or removed.''',
             'set_id': 3
         },
@@ -1329,7 +1346,7 @@ def upgrade():
         },
         {
             'term': 'Whitespace',
-            'definition': '''Used to structure code. This also means right space, and if 
+            'definition': '''Used to structure code. This also means right space, and if
                     this is off, an indentation error will be displayed.''',
             'set_id': 9
         },
@@ -1350,7 +1367,7 @@ def upgrade():
         },
         {
             'term': 'Len()',
-            'definition': '''A type of string method used to measure the length or number 
+            'definition': '''A type of string method used to measure the length or number
                     of characters in a string.''',
             'set_id': 9
         },
@@ -1381,7 +1398,7 @@ def upgrade():
         },
         {
             'term': 'fruit[:3]',
-            'definition': '''Starts at beginning of string "fruit", gives the first three 
+            'definition': '''Starts at beginning of string "fruit", gives the first three
                     characters, up to but not including the index of 3.''',
             'set_id': 9
         },
@@ -1432,8 +1449,8 @@ def upgrade():
         },
         {
             'term': 'Column',
-            'definition': '''Database tables are made of different columns (fields) 
-                    corresponding to the attributes of the object described by 
+            'definition': '''Database tables are made of different columns (fields)
+                    corresponding to the attributes of the object described by
                     the table.''',
             'set_id': 10
         },
@@ -1449,41 +1466,41 @@ def upgrade():
         },
         {
             'term': 'ORDER BY',
-            'definition': '''Clause used to sort the data in ascending or descending order, 
+            'definition': '''Clause used to sort the data in ascending or descending order,
                     based on one or more columns''',
             'set_id': 10
         },
         {
             'term': 'PRIMARY KEY',
-            'definition': '''Constraint that uniquely identifies each record in a database 
-                    table; must contain unique values; should be included in most 
+            'definition': '''Constraint that uniquely identifies each record in a database
+                    table; must contain unique values; should be included in most
                     tables''',
             'set_id': 10
         },
         {
             'term': 'Query',
-            'definition': '''The main way to make a request for information from a database; 
+            'definition': '''The main way to make a request for information from a database;
                     consist of questions presented to the database in a predefined format.''',
             'set_id': 10
         },
         {
             'term': 'How does React connect with Browser DOM elements?',
-            'definition': '''It uses objects called "React elements" to represent the HTML 
-                    elements of the DOM. Developers can also create custom elements called 
+            'definition': '''It uses objects called "React elements" to represent the HTML
+                    elements of the DOM. Developers can also create custom elements called
                     "Components" to represent the larger parts of the UI.''',
             'set_id': 13
         },
         {
             'term': 'JSX',
-            'definition': '''This is an HTML-like syntax extension for JavaScript written 
-                    to be used with React. This is specifically how React adds XML 
+            'definition': '''This is an HTML-like syntax extension for JavaScript written
+                    to be used with React. This is specifically how React adds XML
                     syntax to JavaScript which is compiled to JavaScript at runtime.''',
             'set_id': 13
         },
         {
             'term': 'JSX element',
-            'definition': '''A basic unit of JSX found in a JavaScript file which is treated 
-                    as, and has the functionality of, a JavaScript expression. 
+            'definition': '''A basic unit of JSX found in a JavaScript file which is treated
+                    as, and has the functionality of, a JavaScript expression.
                     It can also have attributes, just like HTML elements.''',
             'set_id': 13
         },
@@ -1529,7 +1546,7 @@ def upgrade():
         },
         {
             'term': '3 main principles of redux',
-            'definition': ''' 
+            'definition': '''
             1. A single source of truth
             2. State is read only
             3. Changes are made with pure functions
@@ -1611,7 +1628,7 @@ def upgrade():
             'definition': '''
                 1. getState() = returns the current state of a store
                 2. dispatch(action) = passes an action into the reducer that tells it what info it must update
-                3. subscribe(callback) = registers cbs to go off whenever the store updates. It returns a function that when 
+                3. subscribe(callback) = registers cbs to go off whenever the store updates. It returns a function that when
                     invoked, it unsubscribes the cb from the store
             ''',
             'set_id': 18
@@ -1802,7 +1819,7 @@ def upgrade():
         {
             'term': '4 Brief reasons TDD is the way to go (i disagree but no one asked for my opinion sadly) ',
             'definition': '''1. Writing tests before writing code means you can make sure the code you are writing works as you are writing it
-                2. Only required code is written - you will not have any extra unnecessary functionality or code 
+                2. Only required code is written - you will not have any extra unnecessary functionality or code
                 3. TDD helps focus on modularity aka breaking down the application in small, testable chunks
                 4. You have a better understanding of the functionality of the code you are going to write, before you do
             ''',
@@ -1828,7 +1845,56 @@ def upgrade():
             'definition': 'Refactoring the code you wrote that passed the tests, and then you loop back to red.',
             'set_id': 21
         },
-        
+
+    ])
+
+    op.bulk_insert(votes_table, [
+        {
+            'set_id': 18  # redux
+            'user_id': 1
+            'is_upvote': False
+        },
+        {
+            'set_id': 18  # redux
+            'user_id': 2
+            'is_upvote': False
+        },
+        {
+            'set_id': 18  # redux
+            'user_id': 3
+            'is_upvote': False
+        },
+        {
+            'set_id': 18  # redux
+            'user_id': 4
+            'is_upvote': False
+        },
+        {
+            'set_id': 5  # redux
+            'user_id': 4
+            'is_upvote': True
+        },
+        {
+            'set_id': 5  # redux
+            'user_id': 3
+            'is_upvote': True
+        },
+        {
+            'set_id': 5  # redux
+            'user_id': 2
+            'is_upvote': True
+        },
+        {
+            'set_id': 5  # redux
+            'user_id': 1
+            'is_upvote': True
+        },
+        {
+            'set_id': 1  # redux
+            'user_id': 2
+            'is_upvote': True
+        },
+
     ])
 
 # ### end Alembic commands ###
