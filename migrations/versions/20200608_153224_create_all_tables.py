@@ -121,6 +121,7 @@ def upgrade():
         {'name': 'Databases'},  # 5
         {'name': 'Frontend'},  # 6
         {'name': 'Backend'},  # 7
+        {'name': 'Other'},
     ])
 
     # Add seeders for sets table
