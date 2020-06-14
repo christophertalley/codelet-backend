@@ -267,7 +267,7 @@ def upgrade():
         },
         {
             'title': 'Unit Testing',  # 21 lizzie
-            'description': 'Enjoy JS unit testing bec in python it is an eyesore ',
+            'description': 'mocha + chai = better than any python testing framework',
             'category_id': '3',
             'user_id': 1,
             'created_at': datetime.now()
@@ -278,21 +278,21 @@ def upgrade():
     op.bulk_insert(cards_table, [
         {
             'term': 'Graphs represent _____ relationships between objects',
-            'definition': 'Graphs represent pairwise relationships between objects',
+            'definition': 'pairwise',
             'set_id': 2
         },
         {
             'term': 'a graph is a _____ more than a collection',
-            'definition': 'a graph is a model more than a collection',
+            'definition': 'model',
             'set_id': 2
         },
         {
             'term': 'the four basic graph types are',
             'definition': '''1. undirected and unweighted,
-        2. undirected and weighted,
-        3. directed and unweighted,
-        directed and weighted
-        ''',
+                2. undirected and weighted,
+                3. directed and unweighted,
+                directed and weighted
+                ''',
             'set_id': 2
         },
         {
@@ -301,13 +301,13 @@ def upgrade():
             'set_id': 2
         },
         {
-            'term': 'Symmetric Matrix',
-            'definition': 'Undirected graphs will always have a symmetric matrix',
+            'term': 'WHat kind of graphs have a symmetric matrix',
+            'definition': 'Undirected graphs',
             'set_id': 2
         },
         {
             'term': 'When is an index null in a directed list',
-            'definition': 'When the index does not point to anything, it is null',
+            'definition': 'When the index does not point to anything',
             'set_id': 2
         },
         {
@@ -332,7 +332,7 @@ def upgrade():
         },
         {
             'term': 'What is a cycle in a graph',
-            'definition': 'A cycle in a graph is a simple path that starts and ends at the same vertex',
+            'definition': 'It is a simple path that starts and ends at the same vertex',
             'set_id': 2
         },
         {
@@ -520,7 +520,7 @@ def upgrade():
         },
         {
             'term': 'What is the correct HTML for making a text input field?',
-            'definition': '<input type = "text"',
+            'definition': '<input type = "text">',
             'set_id': 15
         },
 
@@ -655,7 +655,7 @@ def upgrade():
         },
         {
             'term': 'How does space and time complexity relate to algorithms?',
-            'definition': '''Space and time complexity are both essential when choosing or designing an algorithm.
+            'definition': '''Both are essential when choosing or designing an algorithm.
                         Space complexity deals with the memory space required for the algorithm. Time complexity deals
                         with the amount of time it takes for the full algorithm to complete. Space and time complexity
                         should be considered for all data sizes and especially larger data sets. ''',
@@ -664,7 +664,7 @@ def upgrade():
         {
             'term': 'What is the process of memoization?',
             'definition': '''
-                        Memoization is a technique to optimize the time complexity
+                        A technique to optimize the time complexity
                         of an algorithm by storing the results of expensive function
                         calls and returning the cached result when the same inputs
                         occur again.
@@ -674,7 +674,7 @@ def upgrade():
         {
             'term': 'What is the process of tabulation?',
             'definition': '''
-                       Tabulation is a technique to optimize time  complexity of
+                       A technique to optimize time  complexity of
                        an algorithm by filling out a table with elements.
         ''',
             'set_id': 4
@@ -693,7 +693,7 @@ def upgrade():
         {
             'term': 'How does bubble sort work?',
             'definition': '''
-                        Bubble sort manipulates the data structure by
+                        It manipulates the data structure by
                         swapping the position of two elements.
                         Time Complexity: O(n^2) - polynomial
                         Space Complexity: O(1) - constant
@@ -705,7 +705,7 @@ def upgrade():
         {
             'term': 'How does selection sort work?',
             'definition': '''
-                        Selection sort requires us to locate the
+                        It requires us to locate the
                         smallest value in the array.
                         Time Complexity: O(n^2) - polynomial
                         Space Complexity: O(1)
@@ -717,7 +717,7 @@ def upgrade():
         {
             'term': 'How does insertion sort work?',
             'definition': '''
-                        Insertion sort is a simple sorting algorithm
+                        It is a simple sorting algorithm
                         that is similar to how we sort playing cards in our hands.
                         Time Complexity: O(n^2) - polynomial
                         Space Complexity: O(1)
@@ -729,7 +729,7 @@ def upgrade():
         {
             'term': 'How does merge sort work?',
             'definition': '''
-                        Merge Sort is a classic example of a "Divide and Conquer"
+                        It is a classic example of a "Divide and Conquer"
                         algorithm. In other words, we keep breaking the array into
                         smaller and smaller sub arrays.
                         Time complexity: O(n log(n)) - logarithm
@@ -812,7 +812,7 @@ def upgrade():
             'set_id': 5
         },
         {
-            'term': 'Mergesort time complexity',
+            'term': 'Merge sort time complexity',
             'definition': 'O(n log n) in all cases',
             'set_id': 5
         },
@@ -866,7 +866,7 @@ def upgrade():
         },
         {
             'term': 'tuple',
-            'definition': '''Tuples can be thought of as read-only lists. One can index, slice and concatenate, but one cannot append or alter the values of the tuple after it has been initialized.
+            'definition': '''It can be thought of as read-only lists. One can index, slice and concatenate, but one cannot append or alter the values of the tuple after it has been initialized.
                                 directions=('north', 'south', 'east', 'west')
                             ''',
             'set_id': 8
@@ -875,7 +875,7 @@ def upgrade():
         {
             'term': 'dictionary',
             'definition': '''
-                    Dictionary is the Python term for an associative array. An array is, like a list, a series of values in two dimensions. An associative array gives one a way of accessing the values by a key, a term associated with the value instead of an item's index number.
+                     Python term for an associative array. An array is, like a list, a series of values in two dimensions. An associative array gives one a way of accessing the values by a key, a term associated with the value instead of an item's index number.
 
                         These are similar to hashes in Ruby.
 
@@ -897,7 +897,7 @@ def upgrade():
         {
             'term': 'complex number',
             'definition': '''
-        Complex numbers have a real and imaginary part, which are each a floating point number.
+        They have a real and imaginary part, which are each a floating point number.
 
         >> a=1
         >> b=complex(a)
@@ -907,7 +907,7 @@ def upgrade():
         {
             'term': 'long number',
             'definition': '''
-        Long integers have unlimited precision.
+        They have unlimited precision.
 
         >> a=1
         >> b=long(a)
@@ -933,7 +933,7 @@ def upgrade():
             'term': 'What is the difference between an ID and a class?',
             'definition': '''In the CSS, a class selector is a name preceded by a full stop(".") and an ID selector is a name preceded by a hash character("#").
 
-        The difference between an ID and a class is that an ID can be used to identify one element, whereas a class can be used to identify more than one.''',
+         ID can be used to identify one element, whereas a class can be used to identify more than one.''',
             'set_id': 14
         },
 
@@ -973,7 +973,7 @@ def upgrade():
         },
         {
             'term': 'What does e.preventDefault()do?What is event bubbling?',
-            'definition': '''The preventDefault() method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur.
+            'definition': '''The method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur.
 
                 - Clicking on a "Submit" button, prevent it from submitting a form
                 - Clicking on a link, prevent the link from following the URL
@@ -986,15 +986,15 @@ def upgrade():
         },
         {
             'term': 'AJAX',
-            'definition': 'Ajax is a technique for creating seamless interactive websites via asynchronous data exchange between client and server. Ajax facilitates communication with the server via partial page updates instead of the traditional full-page refresh.',
+            'definition': 'A technique for creating seamless interactive websites via asynchronous data exchange between client and server. Ajax facilitates communication with the server via partial page updates instead of the traditional full-page refresh.',
             'set_id': 14
         },
         {
             'term': 'AMD',
             'definition': '''
-            AMD is a standard defining how to load JavaScript libraries or modules asynchronously
+            A standard defining how to load JavaScript libraries or modules asynchronously
 
-            AMD stands for Asynchronous Module Definition. It is an alternative to CommonJS(CJS) specification.
+            and stands for Asynchronous Module Definition. It is an alternative to CommonJS(CJS) specification.
 
             The API specifies a mechanism for defining modules such that the module and its dependencies can be asynchronously loaded. This is particularly well suited for the browser environment where synchronous loading of modules incurs performance, usability, debugging, and cross-domain access problems.''',
             'set_id': 14
@@ -1064,12 +1064,12 @@ def upgrade():
         },
         {
             'term': 'What is the session object in Flask?',
-            'definition': 'The session object is built off of using cookies. It allows the server to set many different things in the in the session for the client to remember wihout having to create many different cookies and just have one session. It is also encoded so that someone can\'t change session data on the client before sending it to the server.',
+            'definition': 'It is built off of using cookies. It allows the server to set many different things in the in the session for the client to remember wihout having to create many different cookies and just have one session. It is also encoded so that someone can\'t change session data on the client before sending it to the server.',
             'set_id': 16
         },
         {
             'term': 'What exactly does Flask\'s \`jsonify()\` do?',
-            'definition': 'jsonify will take JSON serializeable data in python and convert it to a JSON string.',
+            'definition': 'It will take JSON serializeable data in python and convert it to a JSON string.',
             'set_id': 16
         },
         {
@@ -1080,7 +1080,7 @@ def upgrade():
         {
             'term': 'What is a tree?',
             'definition': '''
-                        A tree is a graph that does not contain any cycles.
+                        A graph that does not contain any cycles.
                         A cycle is is defined as a path through edges that
                         begins and ends at the same node. A tree will always
                         have a root node
@@ -1090,7 +1090,7 @@ def upgrade():
         {
             'term': 'What is a binary tree?',
             'definition': '''
-                        A binary tree is a tree where each node has at most
+                        A tree where each node has at most
                         two children.
         ''',
             'set_id': 1
@@ -1117,7 +1117,7 @@ def upgrade():
         {
             'term': 'How does a breadth-first search traverse a tree?',
             'definition': '''
-                        In BFS, trees are traversed level-by-level, where you visit
+                        Trees are traversed level-by-level, where you visit
                         every node on a level before going to a lower level. This
                         search is referred to as breadth-first search (BFS),
                         as the search tree is broadened as much as possible
@@ -1128,20 +1128,20 @@ def upgrade():
         {
             'term': 'How does a depth-first search traverse a tree?',
             'definition': '''
-                        IN DFS, trees are traversed as deep as possible on each child
-                        before going to the next sibling, thus the name `Depth-first`.
+                        Trees are traversed as deep as possible on each child
+                        before going to the next sibling, thus the name `DFS`.
         ''',
             'set_id': 1
         },
         {
             'term': 'At most, how many children can each node have in a ternary tree? N-ary tree?',
-            'definition': 'Ternary trees have at most 3 children. N-ary trees have at most n children.',
+            'definition': 'They have at most 3 children. N-ary trees have at most n children.',
             'set_id': 1
         },
         {
             'term': 'How do binary search trees differ from binary trees?',
             'definition': '''
-                        A binary search tree is a search tree with the additional added criteria:
+                        It is a search tree with the additional added criteria:
                         - Given any node of the BST, the values in the left subtree must all be
                         strictly less than the given node's value.
                         - Given the same node of the BST, the values in the right subtree must all
@@ -1247,7 +1247,7 @@ def upgrade():
         },
         {
             'term': 'Empty List',
-            'definition': '''An empty list will have no nodes so can be checked by checking 
+            'definition': '''Will have no nodes so can be checked by checking 
                     the node count. Note that Head and Tail should also be null as 
                     there are no nodes to point to.''',
             'set_id': 3
@@ -1467,7 +1467,7 @@ def upgrade():
         },
         {
             'term': 'How does React connect with Browser DOM elements?',
-            'definition': '''React uses objects called "React elements" to represent the HTML 
+            'definition': '''It uses objects called "React elements" to represent the HTML 
                     elements of the DOM. Developers can also create custom elements called 
                     "Components" to represent the larger parts of the UI.''',
             'set_id': 13
@@ -1562,12 +1562,12 @@ def upgrade():
         },
         {
             'term': 'Action',
-            'definition': 'A action is a POJO that has a type property, and contains info that can be used to update the store, ie dispatched',
+            'definition': 'A POJO that has a type property, and contains info that can be used to update the store, ie dispatched',
             'set_id': 18
         },
         {
             'term': 'Pure Function',
-            'definition': 'A function is considered pure if it its behavior does not rely on anythng other than taking in arguments and returning a value',
+            'definition': 'Its behavior does not rely on anythng other than taking in arguments and returning a value',
             'set_id': 18
         },
         {
@@ -1577,7 +1577,7 @@ def upgrade():
         },
         {
             'term': 'Are reducers required to be pure functions?',
-            'definition': 'Yes. Reducers in redux must be pure functions of the dispatched action and the current state.',
+            'definition': 'Yes.They must be pure functions of the dispatched action and the current state.',
             'set_id': 18
         },
         {
@@ -1757,15 +1757,77 @@ def upgrade():
             'set_id': 20
         },
         {
-            'term': 'Thunks',
-            'definition': 'An alternative to middleware, they essentially act as a function that calls another function',
+            'term': 'What are two basic reasons for testing?',
+            'definition': '''To make sure your code works, for increased flexibility and to reduce fear of code/boost confidence
+                to make it easier to collaberate, and act as documentation for the codebase.
+                ''',
             'set_id': 21
         },
         {
-            'term': 'Thunks',
-            'definition': 'An alternative to middleware, they essentially act as a function that calls another function',
+            'term': 'Mocha ',
+            'definition': 'A javascript testing framework that runs tests AND shows them in a nice, user friendly way',
             'set_id': 21
         },
+        {
+            'term': '3 levels of the testing pyramid ',
+            'definition': '1. Unit Tests 2. Integration Tests 3. End to End Tests (E2E)',
+            'set_id': 21
+        },
+        {
+            'term': 'Bottom 1 - Unit Tests ',
+            'definition': 'Smallest unit of testing, used to test little bit of isolated code & should ONLY focus on ONE thing',
+            'set_id': 21
+        },
+        {
+            'term': 'Middle 2 - Integeration Tests ',
+            'definition': 'Tests the interaction between the pieces you tested in isolation, making sure they work together',
+            'set_id': 21
+        },
+        {
+            'term': 'Top Tier - End to End Tests ',
+            'definition': 'Highest level of testing, this is when you are testing the entire app',
+            'set_id': 21
+        },
+        {
+            'term': 'TDD ',
+            'definition': 'Dictates that tests, not application code should be written first',
+            'set_id': 21
+        },
+        {
+            'term': 'Why use TDD?',
+            'definition': 'Code written to pass pre-written specs are guaranteed to be testable and it makes it easier for other people to add new code while making sure they are not breaking anything',
+            'set_id': 21
+        },
+        {
+            'term': '4 Brief reasons TDD is the way to go (i disagree but no one asked for my opinion sadly) ',
+            'definition': '''1. Writing tests before writing code means you can make sure the code you are writing works as you are writing it
+                2. Only required code is written - you will not have any extra unnecessary functionality or code 
+                3. TDD helps focus on modularity aka breaking down the application in small, testable chunks
+                4. You have a better understanding of the functionality of the code you are going to write, before you do
+            ''',
+            'set_id': 21
+        },
+        {
+            'term': '3 steps of TDD workflow ',
+            'definition': 'red - green - refactor = all in a continuous loop ',
+            'set_id': 21
+        },
+        {
+            'term': 'TDD - red ',
+            'definition': 'Write tests that are going to fail',
+            'set_id': 21
+        },
+        {
+            'term': 'TDD-green ',
+            'definition': 'Minimum amount of code needed to get the tests to pass',
+            'set_id': 21
+        },
+        {
+            'term': 'TDD - refactor ',
+            'definition': 'Refactoring the code you wrote that passed the tests, and then you loop back to red.',
+            'set_id': 21
+        },
+        
     ])
 
 # ### end Alembic commands ###
