@@ -468,7 +468,7 @@ def upgrade():
             'set_id': 11
         },
         {
-            'term': 'What does HTMl stand for',
+            'term': 'What does HTML stand for',
             'definition': 'hyper text markup language',
             'set_id': 15
         },
@@ -479,7 +479,7 @@ def upgrade():
         },
         {
             'term': 'Diff between padding and margin',
-            'definition': 'Padding is on the inside and border is on the outside',
+            'definition': 'Padding is on the inside and margin is on the outside',
             'set_id': 15
         },
         {
@@ -489,7 +489,7 @@ def upgrade():
         },
         {
             'term': 'Relative File Path',
-            'definition': 'File path points to a file in the images folder located at the root of the current web',
+            'definition': 'Points to a file in the images folder located at the root of the current web',
             'set_id': 15
         },
         {
